@@ -1,7 +1,9 @@
 export const customStyles = {
     control: (base, state) => ({
       ...base,
+      width: 165,
       backgroundColor: state.isSelected ? '#ff4848' : "#eef0f2",
+      // border:state.isSelected ? 'none' : "solid 2px #0d1b1e",
       // match with the menu
       borderRadius: 0,
       // Overwrittes the different states of border
@@ -10,9 +12,7 @@ export const customStyles = {
       boxShadow: state.isFocused ? null : null,
       background:"#eef0f2",
       marginTop:-10,
-      
-    
-      border: "solid 2px #0d1b1e",
+      border: "none",
       "&:hover": {
         // Overwrittes the different states of border
         borderColor: state.isFocused ? "none" : "none"
@@ -20,6 +20,7 @@ export const customStyles = {
     }),
     menu: base => ({
       ...base,
+      width: 165,
       // override border radius to match the box
       borderRadius: 0,
       // beautify the word cut by adding a dash see https://caniuse.com/#search=hyphens for the compatibility
@@ -36,6 +37,7 @@ export const customStyles = {
       }),
     menuList: (base,state) => ({
       ...base,
+      width: 165,
       // kill the white space on first and last option
       padding: 0,
       background:"#eef0f2",
@@ -46,6 +48,7 @@ export const customStyles = {
     }),
     option: (base, state) => ({
            ...base,
+           width: 165,
            backgroundColor:state.isSelected ? 'none' : 'none',
            color: state.isSelected ? '#ff4848' : '#0d1b1e',
            "&:hover": {
@@ -54,5 +57,10 @@ export const customStyles = {
             cursor:'pointer'
             
           }
-    })
+    }),
+    indicatorSeparator: () => ({ display: 'none' }),
+    // dropdownIndicator: (base, state) => ({
+    //   ...base,
+    //   color: state.selectProps.menuIsOpen ? '#eef0f2' : '#0d1b1e'
+    // })
   };

@@ -14,7 +14,7 @@
 }
 label.input-age{
     width: 15rem;
-    height: 41px;
+    height: 40px;
     top: .35em;
     position: relative;
     text-align: inherit;
@@ -95,7 +95,59 @@ div.css-2b097c-container{
 .sort__control .css-1dq1yrq-control{
     background: transparent;
 }
+
+
+div.css-1hwfws3{
+border:solid 2px #0d1b1e;
+}
+
+.select-input__value-container--has-value.css-1hwfws3{
+    background-color: #ff4848;
+    border:none;
+    padding-top: .3em;
+}
+
+div.css-tlfecz-indicatorContainer{
+    color:white;
+}
+div.css-tlfecz-indicatorContainer{
+    color: #0d1b1e;
+}
+
+
 /* #############Pagination ################### */
+
+.pagination-nav{
+    display: flex;
+    flex-direction: column;
+}
+div.paginate-back-btn{
+    text-align: center;
+    display: flex;
+    color: #222f32;
+    position: absolute;
+    flex-direction: column;
+    width: max-content;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5em;
+}
+.paginate-back-btn svg{
+    margin-bottom: 0.7em;
+    width: 20px;
+    transform: rotate(85deg);
+    filter: invert(1);
+}
+
+.jump-last-page{
+    margin-top: -2em;
+    right: 8rem;
+    margin-left: 1em;
+}
+.jump-last-page svg{
+    transform: rotate(-85deg);
+}
 
 .pagination-number{
     width: 10px;
@@ -132,9 +184,7 @@ text-align: center;
     height: 50px;
 }
 
-.select-input__value-container--has-value.css-1hwfws3{
-    background-color: #ff4848;
-}
+
 div.css-1wa3eu0-placeholder{
     font-family: 'Barlow', sans-serif;
     /* color: #0d1b1e; */
@@ -197,7 +247,6 @@ div.css-1pahdxg-control:hover{
     font-family: 'Barlow', sans-serif;
     color: #0d1b1e;
     border: solid 2px #0d1b1e;
-    border-radius: 3%;
     text-align: center;
     line-height: 1.56;
     font-size: 18px;
@@ -209,11 +258,29 @@ div.css-1pahdxg-control:hover{
     left: 90%;
     font-size: larger;
     color: hsl(0,0%,80%);
+    top: -1px;
+    
 }
+
+
+.down-icon i {
+    border: solid #0d1b1e;
+    border-width: 0 2.5px 2.5px 0;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 19%;
+    width: 10px;
+    height: 10px;
+  }
+
+.down-icon .down {
+    transform: rotate(135deg);
+  }
 
 label.input-age.active{
     background-color: #ff4848;
     color: white;
+    border:none;
 }
 
 /* ########## SEARCH CLEAR AND FILTER BUTONS############# */
@@ -240,6 +307,24 @@ div.close-btn:hover{
  cursor: pointer;   
 }
 
+/* #########SCROLLING BAR ############ */
+
+/* div .select__menu-list::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+  }
+.select__menu-list::-webkit-scrollbar-track {
+    background: red;
+  }
+.select__menu-list::-webkit-scrollbar-thumb {
+    background:blue;
+  }
+.select__menu-list::-webkit-scrollbar-thumb:hover {
+    background: yellow;
+  }
+div.css-n19n07-menu::-webkit-scrollbar-thumb{
+    background:blue;
+} */
 
 @media only screen and (max-width: 600px){
     label.input-age{

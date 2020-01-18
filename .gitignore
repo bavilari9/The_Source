@@ -38,6 +38,8 @@ build/Release
 node_modules/
 jspm_packages/
 .next/
+.next-view/
+imbdlat/
 
 # Typescript v1 declaration files
 typings/
@@ -71,3 +73,4 @@ scripts/secrets/*
 
 devdb
 .vscode
+

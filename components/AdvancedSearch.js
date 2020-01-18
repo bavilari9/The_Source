@@ -15,6 +15,7 @@ import Filter from '../resources/icons/filter.svg'
 import Reset from '../resources/icons/reset.svg'
 
 
+
 function AdvancedSearch({advancedQuery, countries}) {
   let { queries,setQueries,onSliderChange, clearState} = useContext(dataContext);
   let [searchActive, setSearchActive] = useState(false)
@@ -74,9 +75,7 @@ function AdvancedSearch({advancedQuery, countries}) {
           setSearchActive(false)
           console.log("clear query")
           setRangeClass('input-age active')
-        }
-        
-
+        }        
    
           
       return (
@@ -103,7 +102,7 @@ function AdvancedSearch({advancedQuery, countries}) {
           />
           <label className={rangeClass} onClick={(()=>setShowDropDown(true))}>
           <span>Age {queries.age.min !== '' ? `(${queries.age.min} - ${queries.age.max})` : `(16-99)`}</span>
-          <span className="down-icon">&#8249;</span>
+          <span className="down-icon"> <i class="arrow down"></i></span>
           {showDropDown ?(
            <div className="range-dropdown">
              {/* <div onClick={(()=>closeDropDown())} className="close-btn">x</div> */}

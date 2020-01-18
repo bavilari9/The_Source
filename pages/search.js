@@ -1,10 +1,11 @@
+
 import React, { useState, useContext} from "react";
 import fetch from "isomorphic-unfetch";
 import { Nav } from "../components/nav";
 import { Content } from "../components/Search/Content";
 import AdvancedSearch from "../components/AdvancedSearch";
 import "../public/main.css";
-import {customStyles} from '../helpers/customStyles'
+
 
 
 
@@ -36,7 +37,10 @@ function Search({ }) {
   };
 
   const paginate = pageNumber => {
-    setCurrentPage(pageNumber);
+    if(pageNumber >0 ){
+      setCurrentPage(pageNumber);
+    }
+   
   };
 
 

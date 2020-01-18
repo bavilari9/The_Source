@@ -14,7 +14,6 @@ export function Content({ postPerPage, totalPosts,paginate, currentPage,indexOfF
   let  {data, queries, sortSetter} = useContext(dataContext);
   const [test, setTest] = useState(undefined);
 
-  console.log("test", test)
     data = !data ? [] : data;
     data = data.slice(indexOfFirstPage, indexOfTheLastPost) 
     const handleChange = e => {
@@ -67,14 +66,14 @@ export function Content({ postPerPage, totalPosts,paginate, currentPage,indexOfF
       paddingBotton: 20,
       background:"none",
       backgroundColor:state.isSelected ? 'black' : 'none',
-      marginTop:-13,
+      marginTop:-8,
       border: " solid 2px #848c8e",
 
     }),
     option: (base, state) => ({
            ...base,
            background:"none",
-           backgroundColor:state.isSelected ? 'black' : 'none',
+           backgroundColor:state.isSelected ? 'none' : 'none',
            color: state.isSelected ? '#ff4848' : '#848c8e',
            "&:hover": {
             // Overwrittes the different states of border
@@ -86,7 +85,7 @@ export function Content({ postPerPage, totalPosts,paginate, currentPage,indexOfF
   };
   return ( 
     <div className="landing-content">
-
+      <span className="search-result-wrapper">
       {totalPosts > 700?(
         <h2><span>Showing all talent</span></h2>
       ):(
@@ -104,6 +103,7 @@ export function Content({ postPerPage, totalPosts,paginate, currentPage,indexOfF
           styles={customStyles}
           />
       </div>
+      </span>
       <div className="card-wrapper">
        {data.map((data,key)=><ProfileItem key={key} profile={data}/>)}
       </div>
