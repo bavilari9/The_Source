@@ -1,0 +1,254 @@
+.ui-slider .ui-btn-inner {
+    padding: 4px 0 0 0 !important;
+}
+ 
+.ui-slider-popup {
+    position: absolute !important;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 14px;
+    z-index: 100;
+    opacity: 0.8;
+}
+label.input-age{
+    width: 15rem;
+    height: 41px;
+    top: .35em;
+    position: relative;
+    text-align: inherit;
+}
+
+.input-age span{
+    left: 6%;
+    top: 4px;
+    position: relative;
+}
+.range-dropdown{
+    height: -webkit-fill-available;
+    border: solid 2px #0d1b1e;
+    background-color: #eef0f2;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.2em 0em;
+    margin-top: .5em;
+}
+
+div.rc-slider{
+    width: 12rem !important;
+    height: -webkit-fill-available;
+    margin-top: 1.5em;
+}
+div.rc-slider-tooltip-inner{
+width: 20px;
+    height: 28px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    text-align: center;
+    color: #0d1b1e;
+    background: none;
+    box-shadow: none;
+}
+.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow{
+    display: none;
+}
+.rc-slider-handle.rc-slider-handle-1, .rc-slider-handle.rc-slider-handle-2{
+    border: solid 2px #0d1b1e;
+    background-color: #fcfcfc;
+    width: 20px;
+    height: 20px;
+    margin-top: -3px;
+}
+.rc-slider-handle.rc-slider-handle-1.rc-slider-handle-click-focused,
+.rc-slider-handle.rc-slider-handle-2.rc-slider-handle-click-focused{
+    border: solid 2px #ff4848;
+}
+
+.rc-slider-handle.rc-slider-handle-1:hover,
+.rc-slider-handle.rc-slider-handle-2:hover{
+    border: solid 2px #ff4848;
+}
+
+div.rc-slider-track.rc-slider-track-1{
+    background-color: #ff4848;
+    height: 15px;
+}
+
+ 
+div.rc-slider-rail{
+    background-color: #d0cbcb;
+    height: 16px;
+    border-radius: 6px;
+}
+
+div.css-2b097c-container{
+    width: 12rem;
+}
+.sort__control .css-1dq1yrq-control{
+    background: transparent;
+}
+/* #############Pagination ################### */
+
+.pagination-number{
+    width: 10px;
+    height: 22px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    color: #fcfcfc;
+    
+}
+
+.pagination-number:hover{
+    color:#ff4848;
+    cursor: pointer;
+}
+
+li.pagination-number.active{
+    text-decoration:underline;
+    color: #ff4848;
+    font-weight: bold;
+}
+.pagination-data{
+text-align: center;
+ font-family: 'Unna', serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2.7px;
+  color: #848c8e;
+}
+.css-2b097c-container{
+    width: 165px;
+    height: 50px;
+}
+
+.select-input__value-container--has-value.css-1hwfws3{
+    background-color: #ff4848;
+}
+div.css-1wa3eu0-placeholder{
+    font-family: 'Barlow', sans-serif;
+    /* color: #0d1b1e; */
+    line-height: 1.56;
+    font-size: 18px;
+}
+div.sort__placeholder .css-1wa3eu0-placeholder{
+    /* color: #eef0f2 !important; */
+}
+
+div.css-1pahdxg-control:hover{
+    border-color: #ff4848;
+    box-shadow: none;
+}
+
+.advanced-search{
+    height: max-content;
+    padding: 6em 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #eef0f2;
+
+}
+
+.select-input{
+    margin: 1em;
+}
+
+.input-country{
+    width: 12rem;
+    margin: 1em;
+}
+
+.css-2b097c-container{
+    margin: 1em;
+}
+
+
+.css-1uccc91-singleValue{
+    color: white !important;
+}
+
+.css-1hb7zxy-IndicatorsContainer,.css-1wy0on6{
+    position: absolute;
+    right: 0%;
+}
+.css-1okebmr-indicatorSeparator{
+    display: none;
+}
+
+.select-input__menu{
+    margin-top:-2em;
+}
+
+
+
+.input-age{
+    font-family: 'Barlow', sans-serif;
+    color: #0d1b1e;
+    border: solid 2px #0d1b1e;
+    border-radius: 3%;
+    text-align: center;
+    line-height: 1.56;
+    font-size: 18px;
+}
+
+.input-age .down-icon{
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 90%;
+    font-size: larger;
+    color: hsl(0,0%,80%);
+}
+
+label.input-age.active{
+    background-color: #ff4848;
+    color: white;
+}
+
+/* ########## SEARCH CLEAR AND FILTER BUTONS############# */
+.filter-btn, .reset-btn{
+    width: 31px;
+    height: 31px;
+    position: relative;
+    margin-top: .5em;
+}
+.reset-btn path:hover{
+    cursor: pointer;
+    fill: #ff4848;
+}
+
+div.close-btn{
+    top: 27px;
+    position: absolute;
+    width: 90%;
+    text-align: end;
+    font-size: xx-large;
+}
+div.close-btn:hover{
+ color:#ff4848;
+ cursor: pointer;   
+}
+
+
+@media only screen and (max-width: 600px){
+    label.input-age{
+        height: auto;
+    }
+    .range-dropdown{
+        border-top: solid 2px #0d1b1e;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+    }
+}

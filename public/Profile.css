@@ -1,0 +1,249 @@
+/* ##########Profile Card############### */
+a, a:hover, a:active, a:visited, a:focus {
+  text-decoration:none;
+}
+.profile-card{
+  height: 264px;
+ width: 211px;
+    background-color: #d8d8d8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 2em 0em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.profile-card h3{
+  font-family: 'Passion One';
+  font-size: 33px;
+  line-height: 0.88;
+  color: #eef0f2;
+  width: 130px;
+}
+.profile-card p{
+  font-family: 'Unna', serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #848c8e;
+  
+  
+}
+.profile-card:hover .profile-extra{
+  display: block;
+}
+
+
+.profile-extra{
+  display:none;
+  
+}
+
+.profile-extra p{
+  font-family: Barlow;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #fcfcfc;
+}
+
+.profile-info{
+  background-image: linear-gradient(to bottom, rgba(13, 27, 30, 0), #0d1b1e);
+  padding: 1em;
+}
+
+.profile-btn{
+  /* width: 80px;
+  height: 28px; */
+  font-family: 'Unna', serif;
+  font-size: 19px;
+  line-height: 1.47;
+  text-align: left;
+  color: #f9524c;
+}
+.profile-btn:hover{
+  color:#eef0f2;
+  cursor: pointer;
+}
+
+
+/* ###########ingle profile ############### */
+.profile-container{
+  width: 1440px;
+  background-color: #eef0f2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15%;
+
+}
+
+div.col-5,
+div.col-6{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.profile-photo{
+  text-align: -webkit-right;
+}
+.profile-photo.img-fluid{
+  width:100%;
+}
+
+.profile-content::before{
+  content: '';
+    position: absolute;
+    width: 101px;
+    height: 11px;
+    background-color: #ff4848;
+    top: -2em;
+}
+.profile-content h1{
+  width: 307px;
+  font-family: 'Passion One';
+  font-size: 104px;
+  font-weight: bold;
+  line-height: 0.77;
+  letter-spacing: normal;
+  color: #ff4848;
+}
+.profile-content h1::first-line{
+  color: #848c8e;
+  
+}
+.profile-content h2{
+  width: 82px;
+  height: 42px;
+  font-family: 'Unna', serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #848c8e;
+}
+
+.profile-content p:first-of-type{
+  color:
+  #ff4848;
+}
+
+.profile-content p{
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.56;
+  color: #0d1b1e;
+}
+
+.profile-content a{
+  font-family: 'Unna', serif;
+  font-size: 21px;
+  color: #848c8e;
+}
+.profile-content a:hover{
+  color:#ff4848;
+  text-decoration: none;
+}
+/* ########contact verify seccion############# */
+.verify-section{
+  margin: 12rem;
+  text-align: center;
+}
+#search-section{
+  background-color: #0d1b1e;
+  background-color: #0d1b1e;
+  width: 100%;
+  width: 100%;
+    padding: 4em;
+    margin: 0;
+    padding: 0em 0em 4em 0em;
+}
+
+#search-section p{
+width:100%;
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  line-height: 1.56;
+  text-align: center;
+  color: #d8d8d8;
+  padding: 1.3em;
+}
+.verify-section h1{
+  font-family: 'Unna', serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #fcfcfc;
+}
+.verify-section p{
+  width: 421px;
+  text-align: center;
+  height: 71px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  line-height: 1.56;
+  color: #0d1b1e
+}
+.verify-section a{
+  text-decoration: none;
+  width: 194px;
+  padding: .4em 1.2em;
+  font-family: 'Unna', serif;
+  font-size: 21px;
+  line-height: 1.33;
+  text-align: center;
+  color: #fcfcfc;
+  width: 194px;
+  height: 38px;
+  background-color: #ff4848;
+}
+
+.verify-section a:hover{
+  background-color: #cc3636;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .card-wrapper{
+    height: 260px;
+  }
+  .profile-row{
+    flex-direction: column;
+  }
+  .profile-card{
+    width: 140px;
+    height: 250px;
+  }
+  .profile-card h3{
+    font-size: 30px;
+  }
+.profile-photo img.img-fluid{
+    width: 100%;
+  }
+  .profile-content h1{
+    font-size: 60px;
+  }
+  div.profile-content.col-5{
+    margin-top: 15%;
+  }
+
+  .verify-section{
+    margin: 12rem 2rem;
+  }
+  .verify-section p{
+    width: auto;
+  }
+}

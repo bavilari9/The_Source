@@ -1,0 +1,248 @@
+/* ###################DEFAULT INDICATORS################## */
+
+#__next-prerender-indicator{
+    display: none;
+}
+
+
+.__next-build-watcher{
+    display:none
+    }
+
+    .container{
+        padding: 0;
+        width: 100%;
+    }
+
+  /* ###################DEFAULTS################## */  
+
+
+/* ################### HOME PAGE ################## */
+.parnership{
+    text-align: center;
+    padding: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.parnership div{
+    width: 100%;
+    text-align: initial;
+}
+.parnership span{
+    width: 100%;
+}
+
+.parnership h2{
+    font-family: 'Unna', serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #848c8e;
+}
+
+.parnership p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 21px;
+    line-height: 1.33;
+    color: #848c8e;
+}
+.parnership img{
+    height: 100px;
+    margin: 2rem;
+}
+
+/* ###################CONTACT PAGE ################## */
+
+.contact-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+.contact-form{
+    width: 80%;
+    height: 506px;
+    background-color: #eef0f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.contact-form h2{
+    font-family: 'Unna', serif;
+    align-self: flex-start;
+    margin-left: 10%;
+    font-size: 36px;
+    font-weight: bold;
+    color: #0d1b1e;
+}
+
+.contact-form .error-message{
+    font-family: 'Unna', serif;
+    color: #ff4848;
+    text-align: left;
+    width: 100%;
+    padding: 0em 5em;
+    
+}
+.contact-form form{
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.contact-form input{
+    border: solid 1px #0d1b1e;
+    background-color: transparent;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    line-height: 1.56;
+}
+.contact-form::placeholder{
+    color: #0d1b1e;
+}
+
+.contact-form textarea{
+    height: 150px;
+    border: solid 1px #0d1b1e;
+    background-color: transparent;
+    color: #0d1b1e;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:  #0d1b1e;
+    background-color: transparent;
+    color: #848c8e;
+}
+
+
+.contact-form input[name='submit']{
+    font-family: 'Unna', serif;
+    line-height: 1.33;
+    font-size: 21px;
+  background-color: #ff4848;
+  border:none;
+  color:#eef0f2;
+  cursor: pointer;
+border-radius: 0;
+padding: 0.49em 2em;
+margin-top: 1em;
+
+}
+.contact-form input[name='submit']:hover{
+    background-color: #cc3636;
+}
+
+
+.contact-form img{
+    height: 70px;
+    margin: 2rem;
+}
+.contact-form h3{
+    font-family: 'Unna', serif;
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.09;
+    letter-spacing: normal;
+    text-align: center;
+    color: #848c8e;
+}
+
+.contact-wrapper.verification{
+    padding-top:10%;
+    background-color: #0d1b1e;
+
+}
+.verification-wrapper{
+    background-color: #0d1b1e;
+}
+.container.contact-form.verify{
+    padding: 5rem 0rem;
+    height: auto !important;
+}
+
+.contact-form.verify input[type="checkbox"]{
+    width: 28px;
+  height: 28px;
+  border: solid 1px #0d1b1e;
+  background-color: #ffffff;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: solid 1px #0d1b1e;
+  -webkit-text-fill-color:  #0d1b1e;
+  -webkit-box-shadow: 0 0 0px 1000px #eef0f2 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+#success-contact .success-img{
+    width: 67px;
+    margin:2rem;
+}
+/* #################Footer ######################## */
+
+footer{
+    width: 100%;
+    height: 244px;
+    background-color: #0d1b1e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2em;
+}
+
+
+.navbar-footer{
+    flex-direction: column;
+    list-style: none;
+}
+
+
+
+.navbar-footer li{
+    padding: 1em;
+  height: 25px;
+  font-family: 'Unna', serif;
+  font-size: 22px;
+}
+
+.navbar-footer a{
+    color:white;
+    text-decoration: none;
+
+} 
+
+.navbar-footer a:hover{
+    color: #ff4848;
+}
+footer .logo{
+    text-align: center;
+    font-family: 'Unna', serif;
+}
+
+footer .logo p{
+    color: #848c8e;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .parnership div {
+        padding-left: 2em;
+    }
+    
+}

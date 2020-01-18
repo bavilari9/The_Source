@@ -1,0 +1,102 @@
+/* ##################HOME DEFAULT ##########  */
+.landing-content{
+    width: 100%;
+    height: max-content;
+    padding: 10% !important;
+    background-color: #0d1b1e;
+} 
+
+.landing-content h1{
+    font-family: 'Passion One';
+    font-size: 61px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ff4848;  
+}
+.landing-content h2{
+    font-family: 'Barlow', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: #eef0f2;
+    padding: 2% 0%;
+    cursor: pointer;
+}
+
+.landing-content h2:hover{
+    color: #ff4848;  
+}
+
+.landing-content h2:first-of-type{
+    font-size: 21px;
+    font-weight: 600;
+    color: #ff4848;
+}
+.landing-content h2:first-of-type span{
+  font-size: 18px;
+  color: #848c8e;
+}
+.landing-content h2:first-of-type:hover{
+    color: white;
+}
+.card-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 6rem;
+}
+
+.btn-wrapper{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.home-btn{
+    width: 194px;
+    height: 38px;
+    padding: 0.5em 2em;
+    font-family: 'Unna', serif;
+    font-size: 21px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fcfcfc;
+    background-color: #ff4848;
+}
+
+.home-btn:hover{
+    text-decoration: none;
+    color: #fcfcfc;
+    background-color: #cc3636;
+}
+
+/* #############SORT ################ */
+.sort-wrapper{
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+}
+.sort{
+    height: 1.5em;
+}
+
+
+@media only screen and (max-width: 600px){
+    .landing-content h1{
+        font-size: 35px;
+    }
+    .landing-content h2:first-of-type{
+        font-size: 20px;
+        color: #fcfcfc;
+    }
+    .landing-content h2:first-of-type:hover{
+        color:#ff4848;
+    }
+}

@@ -1,0 +1,59 @@
+nav{
+    background-color: #0d1b1e;
+  }
+  nav ul{
+      flex-direction: row;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
+  nav ul li{
+      list-style-type: none;
+      text-align: center;
+  }
+  nav li .active{
+      color: yellowgreen;
+  }
+  nav ul a{
+      text-decoration: none;
+      width: 120px;
+      height: 25px;
+      font-family: 'Unna', serif;
+      font-size: 22px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #eef0f2;
+  }
+  nav ul a:hover{
+      color: #ff4848;
+      text-decoration: none;
+  }
+  
+  nav a.logo{
+      width: 198px;
+      height: 43px;
+      font-family: 'Passion One';
+      font-size: 37px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #eef0f2;
+  }
+  .navbar-nav{
+      flex-direction: row;
+  }
+  .logo .talent-logo{
+      font-family: 'Unna', serif;
+      color: #ff4848;
+  }
+  .logo .db-logo{
+      font-family: 'Unna', serif;
+      font-size: 38px;
+      color: #eef0f2;
+  }
