@@ -26,9 +26,10 @@
     justify-content: center;
     align-items: center;
 }
+
 .parnership div{
     width: 100%;
-    text-align: initial;
+    text-align: center;
 }
 .parnership span{
     width: 100%;

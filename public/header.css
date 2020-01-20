@@ -51,7 +51,7 @@ header .col-8{
     position: inherit;
     left: 37%;
     bottom: 10%;
-    padding:2rem;
+    padding:1rem;
 }
 .hero-title h1::before{
     content: '';
