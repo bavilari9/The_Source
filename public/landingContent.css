@@ -112,4 +112,8 @@ span.search-result-wrapper{
     span.search-result-wrapper{
         flex-direction: column;
     }
+    .landing-content{
+        padding-right: 0rem !important;
+        padding-left: 0rem !important;
+    }
 }
