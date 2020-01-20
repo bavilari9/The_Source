@@ -15,7 +15,7 @@ export function Content(props) {
   })
 
   return (
-    <div className="container landing-content">
+    <div id="home-wrapper"className="container landing-content">
        <h1>600+ Latino Talent profiles</h1>
             <h2 onClick={()=>setDataHome(directing,'directing')}>Directors  ( {directing.length} ) ></h2>
             <div className="row card-wrapper">
@@ -25,7 +25,7 @@ export function Content(props) {
             <div className="row card-wrapper">
             {credits.writing.map((data, key)=><ProfileItem key={key} profile={data}/>)}
             </div>
-            <h2 onClick={()=>setDataHome(acting, 'acting')}>Actors and Actresses ( {acting.length} ) See all > </h2>
+            <h2 onClick={()=>setDataHome(acting, 'acting')}>Actors and Actresses ( {acting.length} ) > </h2>
             <div className="row card-wrapper">
              {credits.acting.map((data, key)=><ProfileItem key={key} profile={data}/>)}
             </div>

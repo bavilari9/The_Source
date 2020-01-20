@@ -216,10 +216,6 @@ width:100%;
 
 
 @media only screen and (max-width: 600px) {
-
-  .card-wrapper{
-    height: 260px;
-  }
   .profile-row{
     flex-direction: column;
   }
@@ -245,5 +241,8 @@ width:100%;
   }
   .verify-section p{
     width: auto;
+  }
+  #search-section{
+    padding: 4rem;
   }
 }

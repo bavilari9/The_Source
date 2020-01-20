@@ -8,10 +8,10 @@ export function  Header() {
   <header>
       <div className="row" >
           <div className="hero-title col-4 ">
-            <h1>
-            <br/><span>First-of-its-kind </span>
+            <h1 className="desktop-hero"><span>First-of-its-kind </span>
             database on Latino talent working in Hollywood
             </h1>
+            <h1 className="mobile-hero">We are <br/><span>Latino</span></h1>
           </div>
           <div className="col-8">
             <img className="img-fluid"src={heroImg } alt="longoria latino talent"/>

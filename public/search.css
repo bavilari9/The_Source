@@ -336,4 +336,8 @@ div.css-n19n07-menu::-webkit-scrollbar-thumb{
         border-left: none;
         border-right: none;
     }
+    div.jump-last-page{
+        right: .5em;
+    }
+
 }

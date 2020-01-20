@@ -95,6 +95,10 @@ span.search-result-wrapper{
 
 
 @media only screen and (max-width: 600px){
+    #home-wrapper.card-wrapper{
+        height: 260px;
+        overflow: hidden;
+    }
     .landing-content h1{
         font-size: 35px;
     }
@@ -104,5 +108,8 @@ span.search-result-wrapper{
     }
     .landing-content h2:first-of-type:hover{
         color:#ff4848;
+    }    
+    span.search-result-wrapper{
+        flex-direction: column;
     }
 }

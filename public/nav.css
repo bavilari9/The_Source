@@ -130,4 +130,14 @@ li.social-btn{
         left: 50%;
         margin-left: -95px;
     }
+    .social-icons{
+        display: none;
+    }
+    nav .search{
+        padding-top: 9rem;
+    }
+    nav h1{
+            font-size: 50px;
+            left: 59%;
+    }
   }

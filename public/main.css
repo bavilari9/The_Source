@@ -242,8 +242,21 @@ footer .logo p{
 
 
 @media only screen and (max-width: 600px) {
-    .parnership div {
-        padding-left: 2em;
+    .contact-form{
+        width:100%;
+    }
+    .contact-wrapper{
+        padding-bottom: 0;
+    }
+    footer{
+        flex-direction: column;
+        height: auto;
+    }
+    .navbar-footer{
+        flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
     }
     
 }

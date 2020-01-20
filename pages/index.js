@@ -10,8 +10,6 @@ import '../public/main.css'
 
 import {sendEmail} from '../api/api'
 
-
-
 function Home({}){
   const sendContactEmail = (message)=>{
     sendEmail(message, setEmailSent)

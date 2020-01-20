@@ -28,6 +28,9 @@ header .col-8{
     padding: 0;
     
 }
+.hero-title .mobile-hero{
+    display: none;
+}
 
 .hero-title::after{
     content: '';
@@ -134,6 +137,12 @@ header .col-8{
         position: absolute;
     margin-top: 20%;
     
+    }
+    .hero-title .mobile-hero{
+        display: block;
+    }
+    .hero-title .desktop-hero{
+        display: none;
     }
     header .col-8 img{
         width: 100%;
