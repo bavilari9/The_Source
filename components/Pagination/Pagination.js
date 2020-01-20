@@ -5,12 +5,10 @@ const Pagination = ({postPerPage, totalPosts, paginate, currentPage})=>{
     let firstIndex = lastIndex-5
     const pageNumbers =[]
 
-    console.log("fist index", totalPosts)
-
     for(let i =1;i<=Math.ceil(totalPosts/postPerPage); i++){
         pageNumbers.push(i)
     }
-    console.log("page numbers", pageNumbers)
+
 
     let currentShow = pageNumbers.slice(firstIndex,lastIndex)
 
@@ -34,7 +32,7 @@ const Pagination = ({postPerPage, totalPosts, paginate, currentPage})=>{
 
             </ul>
             {currentPage<pageNumbers.length?(
-               <div class="paginate-back-btn jump-last-page"onClick={()=>paginate(pageNumbers.length)}><Button/><p>Last</p></div>
+               <div className="paginate-back-btn jump-last-page"onClick={()=>paginate(pageNumbers.length)}><Button/><p>Last</p></div>
            ):(
                 null
            ) } 

@@ -1,5 +1,5 @@
 import React, { Component, useContext, useState} from 'react'
-import AdminData from '../components/AdminData'
+import {withAuthSync } from '../utils/auth'
 import dataContext from '../components/DataContext'
 import fetch from 'isomorphic-unfetch'
 import Profile from '../components/Profile'
@@ -103,4 +103,4 @@ function Data({}) {
   </div>
   )
 }
-export default Data;
+export default withAuthSync(Data);

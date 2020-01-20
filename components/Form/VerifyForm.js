@@ -6,7 +6,7 @@ export default class VerifyForm extends React.Component {
     this.state = {
       inputs: {
         talentName:'',
-        contactName:'',
+        name:'',
         email:'',
         phoneNumber:'',
         bio:'', 
@@ -27,7 +27,7 @@ export default class VerifyForm extends React.Component {
     this.props.submitForm(this.state.inputs);
   }
   render() {
-    const { email,message,talentName,phoneNumber,socialMediaLink,bio,contactName} = this.state.inputs;
+    const { email,message,talentName,phoneNumber,socialMediaLink,bio,name} = this.state.inputs;
     return (
       <div className="contact-wrapper verification">
             <div className="container contact-form verify">
@@ -52,8 +52,8 @@ export default class VerifyForm extends React.Component {
                 <div className="form-group">
                   <input
                       type="text"
-                      value={contactName}
-                      name="contactName"
+                      value={name}
+                      name="name"
                       className="form-control"
                       placeholder="Contact Name"
                       onChange={this.handleChange.bind(this)}

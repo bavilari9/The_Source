@@ -3,9 +3,11 @@ import Router from 'next/router'
 import nextCookie from 'next-cookies'
 import cookie from 'js-cookie'
 
-export const login = ({ token }) => {
+export const login = ( token) => {
+
+  console.log("cookies setting", token )
   cookie.set('token', token, { expires: 1 })
-  Router.push('/admin')
+  Router.push('/data')
 }
 
 export const auth = ctx => {
@@ -17,7 +19,7 @@ export const auth = ctx => {
       ctx.res.writeHead(302, { Location: '/login' })
       ctx.res.end()
     } else {
-      Router.push('/login')
+      Router.push('/data')
     }
   }
 
@@ -32,6 +34,7 @@ export const logout = () => {
 }
 
 export const withAuthSync = WrappedComponent => {
+  console.log("this is auth wrapper", WrappedComponent)
   const Wrapper = props => {
     const syncLogout = event => {
       if (event.key === 'logout') {
@@ -53,8 +56,9 @@ export const withAuthSync = WrappedComponent => {
   }
 
   Wrapper.getInitialProps = async ctx => {
-    const token = auth(ctx)
 
+    const token = auth(ctx)
+    console.log('getting initial props', token )
     const componentProps =
       WrappedComponent.getInitialProps &&
       (await WrappedComponent.getInitialProps(ctx))

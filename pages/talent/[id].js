@@ -3,7 +3,7 @@ import React, {useContext, useEffect, useState } from 'react'
 import Layout from '../../components/layout';
 import { Nav } from "../../components/nav"
 import dataContext from '../../components/DataContext'
-
+import ProfileItem from '../../components/Profile/ProfileItem'
 import femaleBackground from '../../static/female.jpg'
 import maleBackground from '../../static/male.jpg'
 
@@ -13,12 +13,15 @@ import '../../public/Profile.css';
 
 
 export default function Post() {
-  let  {data} = useContext(dataContext);
+  let  {data } = useContext(dataContext);
   const router = useRouter();
+  const profileCategory = data.filter(profile=> profile.id === router.query.id)[0]
 
   const style=(gender)=>{
     return gender=='female'? femaleBackground :maleBackground;
   }
+
+
   const render = (profile)=>{
        profile = profile.filter(profile=> profile.id === router.query.id)[0]
 
@@ -46,9 +49,17 @@ export default function Post() {
       )
     }
   } 
-
+  const renderRelatedProfiles =(profile)=>{
+    console.log("profiles", profile)
+    let relatedProfiles = data.filter(e=>e.credit == profileCategory.credit).slice(0,4)
+    console.log('related Profiles', relatedProfiles)
+    return(
+      relatedProfiles.map((data, key)=><ProfileItem key={key} profile={data}/>)
+      )
+  }
   return (
-    <Layout>
+    <div>
+
        <Nav/>
       <div className=" profile-container container">
         {render(data)}
@@ -56,7 +67,15 @@ export default function Post() {
           <p>If this is your profile please contact us to autorize your data usage with us.</p>
           <a href="/contact">Verify this profile</a>
         </div>
+        <div id="profile-id-wrapper" className='landing-content'>
+          <p>Other profiles</p>
+          <div className="card-wrapper">
+
+         
+          {renderRelatedProfiles(data)}
+          </div>
+        </div>
       </div>
-    </Layout>
+      </div>
   );
 }

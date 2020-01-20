@@ -118,7 +118,7 @@ li.social-btn{
   }
 
   @media only screen and (max-width: 720px) {
-    nav .main-nav{
+    nav .main-nav, nav .white-nav{
         height: 200px;
         justify-content: space-evenly;
         align-items: flex-end;
@@ -136,6 +136,7 @@ li.social-btn{
     nav .search{
         padding-top: 9rem;
     }
+
     nav h1{
             font-size: 50px;
             left: 59%;

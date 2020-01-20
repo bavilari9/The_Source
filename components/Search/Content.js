@@ -104,7 +104,7 @@ export function Content({ postPerPage, totalPosts,paginate, currentPage,indexOfF
           />
       </div>
       </span>
-      <div className="card-wrapper">
+      <div id="search-wrapper" className="card-wrapper">
        {data.map((data,key)=><ProfileItem key={key} profile={data}/>)}
       </div>
       {totalPosts?(

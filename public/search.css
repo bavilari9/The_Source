@@ -339,5 +339,8 @@ div.css-n19n07-menu::-webkit-scrollbar-thumb{
     div.jump-last-page{
         right: .5em;
     }
+    .input-age span{
+        position: initial;
+    }
 
 }

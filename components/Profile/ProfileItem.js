@@ -21,7 +21,6 @@ export default function ProfileItem(props) {
 }
   dob = new Date().getFullYear() - parseInt(dob.split('T')[0].substring(0, 4));
   return (
-    <div className="">
       <div className="profile-card" onClick={(()=>route(name, props.profile))} style ={ { backgroundImage: "url("+style(gender)+")" } } >
         <span className="profile-info">
           <h3>{name}</h3>
@@ -37,6 +36,5 @@ export default function ProfileItem(props) {
           </span>
         </span>
       </div>
-    </div>
   )
 }

@@ -32,12 +32,14 @@ function Home({}){
       <div className="container">
           <Nav/>
           <Header/>
+
           <Content 
            acting={acting}
            directing={directing}
            writing={writing}
            showrunning={showrunning}
           />
+
           <Partners/>
           {submitingForm()}
       </div>

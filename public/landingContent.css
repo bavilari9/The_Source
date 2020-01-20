@@ -4,6 +4,7 @@
     height: max-content;
     padding: 10% !important;
     background-color: #0d1b1e;
+    overflow: hidden;
 } 
 
 .landing-content h1{
@@ -11,7 +12,7 @@
     font-size: 61px;
     font-weight: bold;
     font-stretch: normal;
-    font-style: normal;
+    font-style: normal; 
     line-height: normal;
     letter-spacing: normal;
     color: #ff4848;  
@@ -25,6 +26,25 @@
     cursor: pointer;
 }
 
+#profile-id-wrapper{
+    padding: 5% !important;
+}
+
+#profile-id-wrapper p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 21px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #eef0f2;
+}
+#profile-id-wrapper .card-wrapper{
+    overflow: hidden;
+    height: 300px;
+    margin-top: 3rem;
+}
 .landing-content h2:hover{
     color: #ff4848;  
 }
@@ -40,6 +60,14 @@
 }
 .landing-content h2:first-of-type:hover{
     color: white;
+}
+#search-wrapper{
+
+}
+
+div.card-wrapper.home-profiles{
+    overflow: hidden;
+    height: 300px;
 }
 .card-wrapper{
     display: flex;
@@ -101,6 +129,10 @@ span.search-result-wrapper{
     }
     .landing-content h1{
         font-size: 35px;
+        padding-left: 0.2em;
+    }
+    .landing-content h2{
+        padding-left: 0.2em;
     }
     .landing-content h2:first-of-type{
         font-size: 20px;

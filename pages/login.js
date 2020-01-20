@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../public/login.css'
 import Layout from '../components/layout'
+import cookies from 'next-cookies'
 
 import Router from 'next/router'
-import {auth} from '../utils/auth'
+import {login} from '../utils/auth'
 
 class Login extends Component {
   constructor(){
@@ -24,11 +25,16 @@ class Login extends Component {
 login(e){
     e.preventDefault(); // prevent default form action
     // send request to make sure the email and password are correct
+
+    console.log(this.state.inputs)
     axios.post(`${process.env.MANAGEMENT}/login`, this.state.inputs)
+
       .then(response => { // set the user based off of the response
         if (response.status === 200) {
-          const { token } = response.json()
-          login({ token })
+      
+          const { token } = response.data
+          console.log("logged in ", response.data.token)
+          login(token)
         } else {
           console.log('Login failed.')
           // https://github.com/developit/unfetch#caveats
@@ -60,7 +66,7 @@ login(e){
        <div className="row">
       <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div className="card card-signin my-5"></div>
-      <div class="card-body">
+      <div className="card-body">
         <h1 className="card-title text-center">Log In</h1>
 
         <form  onSubmit={this.login.bind(this)} className="form-signin">

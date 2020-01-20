@@ -115,7 +115,7 @@ div.col-6{
 .profile-content h1{
   width: 307px;
   font-family: 'Passion One';
-  font-size: 104px;
+  font-size: 70px;
   font-weight: bold;
   line-height: 0.77;
   letter-spacing: normal;
@@ -226,16 +226,22 @@ width:100%;
   .profile-card h3{
     font-size: 30px;
   }
+  div.profile-photo .col-6{
+    max-width: 60%;
+  }
+
 .profile-photo img.img-fluid{
     width: 100%;
   }
   .profile-content h1{
-    font-size: 60px;
+    font-size: 55px;
   }
   div.profile-content.col-5{
     margin-top: 15%;
-  }
+    max-width: 80.666667%;
 
+  }
+ 
   .verify-section{
     margin: 12rem 2rem;
   }
