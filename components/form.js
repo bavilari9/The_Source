@@ -15,12 +15,16 @@ export default class Form extends React.Component {
         country:'',
         credit:'acting',
         imdb_link:'',
+        imgLink:'',
         main_profile:'false'
       }
+      
     };
+    this.fileInput = React.createRef();
   }
+  
   handleChange(e) {
-    const val = e.target.value;
+    const val = e.target.value || e.target.files[0];
     const name = e.target.name;
     this.setState(prev => {
       prev.inputs[name] = val;
@@ -140,6 +144,17 @@ export default class Form extends React.Component {
                       onChange={this.handleChange.bind(this)}
                     />
                    </label>
+                </div>
+                <div className="form-group form-input">
+                  <label>
+                    Image:
+                    <input 
+                    type="file" 
+                    name="imageUrl" 
+                    accept="image/*"
+                    ref={this.fileInput}
+                    />
+                  </label>
                 </div>
                 <div className="form-group form-input">
                   <label>

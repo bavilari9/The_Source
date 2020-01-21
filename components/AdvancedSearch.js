@@ -62,7 +62,7 @@ function AdvancedSearch({advancedQuery, countries}) {
           console.log("clode")
           setSearchActive(true)
         
-// to do : close on click
+          // to do : close on click
           setShowDropDown(false)
 
           console.log("setting slider on close ", showDropDown)
@@ -81,25 +81,26 @@ function AdvancedSearch({advancedQuery, countries}) {
       return (
         <div className="advanced-search">
           <Filter className="filter-btn"/>
-          <Select 
-          name="credit"
-          options={credits}
-          value={credits.find(o => o.value === queries['credit']) || 0}
-          placeholder  = "Credits"
-          onChange={(e,meta)=>setQueries(e,meta,advancedQuery,setSearchActive)}
-          classNamePrefix="select-input"
-          styles={customStyles}
-          />
+          <div className='advanced-input-wrapper'>
+            <Select 
+            name="credit"
+            options={credits}
+            value={credits.find(o => o.value === queries['credit']) || 0}
+            placeholder  = "Credits"
+            onChange={(e,meta)=>setQueries(e,meta,advancedQuery,setSearchActive)}
+            classNamePrefix="select-input"
+            styles={customStyles}
+            />
 
-          <Select 
-          name="gender"
-          options={genderOptions}
-          placeholder  = "Gender"
-          value={genderOptions.find(o => o.value === queries['gender']) || 0}
-          onChange={(e,meta)=>setQueries(e,meta,advancedQuery,setSearchActive)}
-          classNamePrefix="select-input"
-          styles={customStyles}
-          />
+            <Select 
+            name="gender"
+            options={genderOptions}
+            placeholder  = "Gender"
+            value={genderOptions.find(o => o.value === queries['gender']) || 0}
+            onChange={(e,meta)=>setQueries(e,meta,advancedQuery,setSearchActive)}
+            classNamePrefix="select-input"
+            styles={customStyles}
+            />
           <label className={rangeClass} onClick={(()=>setShowDropDown(true))}>
           <span>Age {queries.age.min !== '' ? `(${queries.age.min} - ${queries.age.max})` : `(16-99)`}</span>
           <span className="down-icon"> <i className="arrow down"></i></span>
@@ -130,8 +131,8 @@ function AdvancedSearch({advancedQuery, countries}) {
           classNamePrefix="select-input"
           styles={customStyles}
           /> 
-          {searchActive? <div onClick={(()=>{clearQuery()})}><Reset className="reset-btn"/></div> : <div></div>}     
-          
+        </div>
+        {searchActive? <div onClick={(()=>{clearQuery()})} className="reset-wrapper"><Reset className="reset-btn"/></div> : <div></div>}     
         </div>
       );
   }
