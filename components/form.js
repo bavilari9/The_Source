@@ -15,7 +15,7 @@ export default class Form extends React.Component {
         country:'',
         credit:'acting',
         imdb_link:'',
-        imgLink:'',
+        imgLink:{},
         main_profile:'false'
       }
       
@@ -24,16 +24,19 @@ export default class Form extends React.Component {
   }
   
   handleChange(e) {
-    const val = e.target.value?e.target.value : e.target.files[0];
-    console.log("this is value", val)
+  const val = e.target.value ? e.target.value  : e.target.files[0].name
     const name = e.target.name;
     this.setState(prev => {
       prev.inputs[name] = val;
       return prev;
     });
   }
+  handleFile(e){
+   console.log(e.target.files)
+  }
   submitForm(e) {
     e.preventDefault();
+    console.log("inputs", this.state.inputs)
     this.props.submitForm(this.state.inputs);
   }
 
@@ -142,8 +145,8 @@ export default class Form extends React.Component {
                       type="text"
                       value={imdb_link}
                       name="imdb_link"
-                      onChange={this.handleChange.bind(this)}
-                    />
+                    onChange={this.handleChange.bind(this)}
+                  />
                    </label>
                 </div>
                 <div className="form-group form-input">

@@ -17,6 +17,7 @@ const Data = props => {
   const [postPerPage, setPostPerPage] = useState(20);
 
   const submitForm =(data)=>{
+    console.log('submiting data', data)
     fetch(`${process.env.MANAGEMENT}/profile`, {
       method: 'POST',
       headers: {
