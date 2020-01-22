@@ -35,32 +35,34 @@ function EarlyAccess () {
         window.open(`mailto:${CONSTANTS.ADMIN_EMAIL}`);
     };
         return <div className="early-access">
-            <div className="header">
-                <Logo />
-                <div className="subtitle">First-of-its-kind database on Latino talent working in Hollywood.</div>
-            </div>
-            <div className="body">
-                <p className="lbl-code">Introduce your early access code here</p>
-                {/* {invalid ? <p>Invalid Code</p> : null} */}
-                <input className="input-code" style={invalid ? {color: "#ff4848", borderColor: "#ff4848"} : null} onChange={onChange} id='txt-code' text={code}/>
-                {/* <button className="btn-submit" sendCode={sendCode}>Enter</button> */}
-                <div className="invalid">
-                    {invalid ? 
-                        <div className="message-error">
-                            <span className="oval">!</span>
-                            Code is not valid, try again.
-                        </div>
-                    : null}
+            <div className="early-access-container">
+                <div className="header">
+                    <Logo />
+                    <div className="subtitle">First-of-its-kind database on Latino talent working in Hollywood.</div>
                 </div>
-                <Button title="Enter" action={sendCode} />
-                <div className="contact-us">
-                    <p className="message">
-                        Want access or be included on the database?
-                        <span onClick={sendEmail} className="email-link">Contact us here</span>
-                    </p>
-                </div>
-                <div className="footer">
-                    ©2020 All rights reserved.
+                <div className="body">
+                    <p className="lbl-code">Introduce your early access code here</p>
+                    {/* {invalid ? <p>Invalid Code</p> : null} */}
+                    <input className="input-code" style={invalid ? {color: "#ff4848", borderColor: "#ff4848"} : null} onChange={onChange} id='txt-code' text={code}/>
+                    {/* <button className="btn-submit" sendCode={sendCode}>Enter</button> */}
+                    <div className="invalid">
+                        {invalid ? 
+                            <div className="message-error">
+                                <span className="oval">!</span>
+                                Code is not valid, try again.
+                            </div>
+                        : null}
+                    </div>
+                    <Button title="Enter" action={sendCode} />
+                    <div className="contact-us">
+                        <p className="message">
+                            Want access or be included on the database?
+                            <span onClick={sendEmail} className="email-link">Contact us here</span>
+                        </p>
+                    </div>
+                    <div className="footer">
+                        ©2020 All rights reserved.
+                    </div>
                 </div>
             </div>
         </div>

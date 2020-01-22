@@ -8,11 +8,13 @@ import cookie from 'js-cookie';
 import {Footer} from '../components/Footer'
 import EarlyAccess from './early_access';
 import {checkCode} from '../api/api';
+import Loader from '../components/Loader';
 
 
 class MyApp extends App {
     DURATION_COOKIE = 1;
     state = {
+        loading: true,
         data: [
         ],
         countries:[],
@@ -173,6 +175,7 @@ class MyApp extends App {
             this.setState({
               data,countries,
               existsCookie: true,
+              loading: false,
               dataCategory: Object.assign({}, this.state.access, {
                 acting,showrunning, writing, directing
               }),
@@ -180,6 +183,7 @@ class MyApp extends App {
             })
           } else {
             this.setState({
+              loading: false,
               existsCookie: false
             })
           }
@@ -215,7 +219,9 @@ class MyApp extends App {
       sortSetter:this.sortSetter.bind(this),
       saveEarlyAccessToken:this.saveEarlyAccessToken.bind(this)
       }}>
-        {this.state.existsCookie ?
+        {this.state.loading ? 
+          <Loader/>
+        : this.state.existsCookie ?
             <div className="imbd-container">
               <Layout>
                 <Component {...pageProps} />

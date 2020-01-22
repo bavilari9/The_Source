@@ -3,17 +3,23 @@
     min-height: 100%;
     background-color: #0d1b1e;
 } */
-body {
+.early-access {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: #0d1b1e;
 }
 @media screen and (max-width: 600px) {
-    .early-access {
+    .early-access-container {
         width: 90% !important;
     }
 }
-.early-access {
+.early-access-container {
     min-height: 100%;
-    /* margin-top: 20px; */
+    margin-top: 20px;
     width: 30%;
     display: block;
     height: fit-content;
