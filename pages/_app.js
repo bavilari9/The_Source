@@ -164,7 +164,7 @@ class MyApp extends App {
       componentDidMount () {
         checkCode().then(existsCookie => {
           console.log(existsCookie)
-          if (existsCookie.exists) {
+          // if (existsCookie.exists) {
             let {data, countries}= this.props
             data = !data ? [] : data;
             let acting =data.filter(profile=>profile.credit==='acting');
@@ -174,19 +174,19 @@ class MyApp extends App {
 
             this.setState({
               data,countries,
-              existsCookie: true,
+              existsCookie: existsCookie.exists,
               loading: false,
               dataCategory: Object.assign({}, this.state.access, {
                 acting,showrunning, writing, directing
               }),
               // earlyAccessCode: this.getEarlyAccess()
             })
-          } else {
-            this.setState({
-              loading: false,
-              existsCookie: false
-            })
-          }
+          // } else {
+          //   this.setState({
+          //     loading: false,
+          //     existsCookie: false
+          //   })
+          // }
         });
 
       }
