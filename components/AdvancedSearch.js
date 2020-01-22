@@ -53,7 +53,7 @@ function AdvancedSearch({advancedQuery, countries}) {
             setTimeout(()=>{
               setShowDropDown(false)
              setRangeClass('input-age active')
-            },9000 )
+            },90000 )
            
           }
         }
