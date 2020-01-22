@@ -1,0 +1,17 @@
+.component-logo {
+    display: block;
+    margin: auto;
+    width: 80%;
+    /* height: 250px; */
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Passion One';
+    font-size: 37px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #eef0f2;
+}

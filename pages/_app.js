@@ -4,11 +4,17 @@ import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout'
 import DataContext from '../components/DataContext'
 import Router from 'next/router'
+import cookie from 'js-cookie';
 import {Footer} from '../components/Footer'
+import EarlyAccess from './early_access';
+import {checkCode} from '../api/api';
+import Loader from '../components/Loader';
 
 
 class MyApp extends App {
+    DURATION_COOKIE = 1;
     state = {
+        loading: true,
         data: [
         ],
         countries:[],
@@ -27,6 +33,7 @@ class MyApp extends App {
           credit: undefined,
           gender:undefined
         },
+        existsCookie: null,
         queryString:[],
         singleProfile:[]
       };
@@ -138,36 +145,64 @@ class MyApp extends App {
       static async getInitialProps({}) {
         singleProfile()
       }
-      static async getInitialProps({}) {
-        const res = await fetch(`${process.env.MANAGEMENT}/profile`);
-          const data = await res.json();
-          const resCounties = await fetch(
-            `${process.env.MANAGEMENT}/profile/countries`
-          );
-          const countries = await resCounties.json();
-          return { data, countries };
+      static async getInitialProps(params = {}) {
+        // const existsCookie = await checkCode();
+        let data = [];
+        let countries = [];
+        // console.log("@existsCookie", existsCookie.exists)
+        // if (existsCookie.exists) {
+          const res = await fetch(`${process.env.MANAGEMENT}/profile`);
+            data = await res.json();
+            const resCounties = await fetch(
+              `${process.env.MANAGEMENT}/profile/countries`
+            );
+            countries = await resCounties.json();
+        // }
+        return { data, countries}//, existsCookie: existsCookie.exists };
       }
 
       componentDidMount () {
-        let {data, countries}= this.props
-        data = !data ? [] : data;
-        let acting =data.filter(profile=>profile.credit==='acting');
-        let writing = data.filter(profile=>profile.credit=='writing' )
-        let directing = data.filter(profile=>profile.credit =='directing');
-        let showrunning = data.filter(profile=>profile.credit=='showrunning');
+        checkCode().then(existsCookie => {
+          console.log(existsCookie)
+          if (existsCookie.exists) {
+            let {data, countries}= this.props
+            data = !data ? [] : data;
+            let acting =data.filter(profile=>profile.credit==='acting');
+            let writing = data.filter(profile=>profile.credit=='writing' )
+            let directing = data.filter(profile=>profile.credit =='directing');
+            let showrunning = data.filter(profile=>profile.credit=='showrunning');
 
-        this.setState({
-          data,countries,
-          dataCategory: Object.assign({}, this.state.access, {
-            acting,showrunning, writing, directing
-          })
-        })
+            this.setState({
+              data,countries,
+              existsCookie: true,
+              loading: false,
+              dataCategory: Object.assign({}, this.state.access, {
+                acting,showrunning, writing, directing
+              }),
+              // earlyAccessCode: this.getEarlyAccess()
+            })
+          } else {
+            this.setState({
+              loading: false,
+              existsCookie: false
+            })
+          }
+        });
 
       }
+  getEarlyAccess() {
+    return cookie.get("earlyAccessCode");
+  }
+  saveEarlyAccessToken(token) {
+    // cookie.set("earlyAccessCode", token, {expires: this.DURATION_COOKIE});
+    this.setState({
+      existsCookie: true
+    });
+  }
   render() {
+    // cookie.remove("earlyAccessCode");
     const { Component, pageProps } = this.props;
     const {data, countries, dataCategory, queries, singleProfile} = this.state;
-    
     return<DataContext.Provider value={{
       data,countries,dataCategory,queries,singleProfile,
       setDataHome : this.setDataHome.bind(this),
@@ -181,13 +216,20 @@ class MyApp extends App {
       setDeleteData:this.setDeleteData.bind(this),
       setSubmitEdit:this.setSubmitEdit.bind(this),
       handleAdminChange: this.handleAdminChange.bind(this),
-      sortSetter:this.sortSetter.bind(this)
+      sortSetter:this.sortSetter.bind(this),
+      saveEarlyAccessToken:this.saveEarlyAccessToken.bind(this)
       }}>
-            <Layout>
+        {this.state.loading ? 
+          <Loader/>
+        : this.state.existsCookie ?
+            <div className="imbd-container">
+              <Layout>
                 <Component {...pageProps} />
-            </Layout>
-            <Footer/>
-           </DataContext.Provider>
+              </Layout>
+              <Footer/>
+            </div>
+          : <EarlyAccess />}
+      </DataContext.Provider>
   }
 }
 
