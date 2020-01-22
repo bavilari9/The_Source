@@ -18,13 +18,16 @@ const Data = props => {
 
   const submitForm =(data)=>{
     console.log('submiting data', data)
+    let formData = new FormData()
+    formData.append('imgLink',data)
     fetch(`${process.env.MANAGEMENT}/profile`, {
       method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
+      // headers: {
+      //   // 'Accept': 'application/json',
+      //   'Content-Type': 'multipart/form-data'
+      // },
+      // body: JSON.stringify(data),
+      body:formData
     }).then(response=>response.json())
     .then(res=>{
       submitFormData(res)

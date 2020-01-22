@@ -17,14 +17,18 @@ export default class Form extends React.Component {
         imdb_link:'',
         imgLink:{},
         main_profile:'false'
-      }
+      }, 
+      imgLink:{}
       
     };
     this.fileInput = React.createRef();
   }
   
   handleChange(e) {
-  const val = e.target.value ? e.target.value  : e.target.files[0].name
+    console.log("file", e.target.files[0])
+  const val = e.target.files[0] 
+  console.log("value",val)
+
     const name = e.target.name;
     this.setState(prev => {
       prev.inputs[name] = val;
@@ -32,7 +36,15 @@ export default class Form extends React.Component {
     });
   }
   handleFile(e){
-   console.log(e.target.files)
+ 
+   const val = e.target.files[0] 
+
+   const name = e.target.name;
+
+   console.log("FIle",e.target.files[0], "name", name)
+   this.setState({imgLink: val},(()=>{
+    this.props.submitForm(this.state.imgLink);
+   }));
   }
   submitForm(e) {
     e.preventDefault();
@@ -48,7 +60,7 @@ export default class Form extends React.Component {
       <div className="page-wrapper">
             <div className="form-content">
             <div className="form">
-            <form onSubmit={this.submitForm.bind(this)}>
+            <form onSubmit={this.submitForm.bind(this)} encType="multipart/form-data" >
                 <div className="form-group form-input">
                   <label>
                     Name:
@@ -155,7 +167,7 @@ export default class Form extends React.Component {
                     <input 
                     name="imgLink"
                     type="file"
-                    onChange={this.handleChange.bind(this)} />
+                    onChange={this.handleFile.bind(this)} />
                   </label>
                 </div>
                 <div className="form-group form-input">
