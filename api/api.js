@@ -95,3 +95,30 @@ export const advancedQuery = (query, setData)=> {
       setData(res);
     });
 };
+
+export const getCode = (code) => {
+  return fetch(`${process.env.MANAGEMENT}/codes/?code=${code}`, {
+    // mode: 'no-cors',
+    method: "GET",
+    credentials: 'include',
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    // body: {code}
+  }).then(res => res.json());
+};
+
+export const checkCode = () => {
+  return fetch(`${process.env.MANAGEMENT}/codes/checkCode`, {
+    // mode: 'no-cors',
+    method: "GET",
+    credentials: 'include',
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    // body: {code}
+  // }).then(console.log)
+  }).then(res => res.json());
+};
