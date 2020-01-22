@@ -120,6 +120,10 @@ div.css-tlfecz-indicatorContainer{
 .pagination-nav{
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+.pagination-nav ul{
+    width: 80%;
 }
 div.paginate-back-btn{
     text-align: center;
@@ -140,6 +144,9 @@ div.paginate-back-btn{
     filter: invert(1);
 }
 
+.jump-back{
+    left: 10%;
+}
 .jump-last-page{
     margin-top: -2em;
     right: 8rem;

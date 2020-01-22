@@ -44,16 +44,15 @@ function AdvancedSearch({advancedQuery, countries}) {
          })
 
         
-
-        const setSliderVal=(e,meta)=>{
+       const setSliderVal=(e,meta)=>{
           onSliderChange(e,advancedQuery)
           setSearchActive(true)
           if(e){
               console.log("setting slider", showDropDown)
-            setTimeout(()=>{
-              setShowDropDown(false)
+            // setTimeout(()=>{
+            //   setShowDropDown(false)
               setRangeClass('input-age active')
-            },3000  )
+            // },3000  )
            
           }
         }
@@ -108,7 +107,7 @@ function AdvancedSearch({advancedQuery, countries}) {
            <div className="range-dropdown">
              {/* <div onClick={(()=>closeDropDown())} className="close-btn">x</div> */}
            <Range 
-             defaultValue={[20, 40]}  
+             defaultValue={[queries.min,queries.max]}  
              step={10}
              min={0} 
              max={100}

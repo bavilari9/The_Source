@@ -7,15 +7,12 @@ import AdvancedSearch from "../components/AdvancedSearch";
 import "../public/main.css";
 
 
-
-
 import dataContext from "../components/DataContext";
 
 function Search({ }) {
   let { data,countries, setData} = useContext(dataContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(20);
-
 
 
   const advancedQuery = query => {
@@ -64,7 +61,7 @@ function Search({ }) {
           paginate={paginate} 
           currentPage={currentPage}
           indexOfFirstPage = {indexOfFirstPage}
-          indexOfTheLastPost={indexOfTheLastPost}
+          indexOfTheLastPost={data.length<indexOfTheLastPost ? data.length : indexOfTheLastPost}
         />
 
         <div id="search-section"className="verify-section">

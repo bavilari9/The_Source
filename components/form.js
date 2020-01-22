@@ -24,7 +24,8 @@ export default class Form extends React.Component {
   }
   
   handleChange(e) {
-    const val = e.target.value || e.target.files[0];
+    const val = e.target.value?e.target.value : e.target.files[0];
+    console.log("this is value", val)
     const name = e.target.name;
     this.setState(prev => {
       prev.inputs[name] = val;
@@ -149,11 +150,9 @@ export default class Form extends React.Component {
                   <label>
                     Image:
                     <input 
-                    type="file" 
-                    name="imageUrl" 
-                    accept="image/*"
-                    ref={this.fileInput}
-                    />
+                    name="imgLink"
+                    type="file"
+                    onChange={this.handleChange.bind(this)} />
                   </label>
                 </div>
                 <div className="form-group form-input">

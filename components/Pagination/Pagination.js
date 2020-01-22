@@ -19,7 +19,7 @@ const Pagination = ({postPerPage, totalPosts, paginate, currentPage})=>{
     return <div>
         <nav className="pagination-nav">
            {currentPage>1?(
-               <div class="paginate-back-btn"onClick={()=>paginate(currentPage-1)}><Button/><p>Previous</p></div>
+               <div class="paginate-back-btn jump-back"onClick={()=>paginate(currentPage-1)}><Button/><p>Previous</p></div>
            ):(
                 null
            ) } 
