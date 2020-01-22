@@ -12,18 +12,18 @@
     z-index: 100;
     opacity: 0.8;
 }
-label.input-age{
+div.input-age{
     width: 15rem;
     height: 40px;
     top: .35em;
     position: relative;
-    text-align: inherit;
 }
 
 .input-age span{
     left: 6%;
     top: 4px;
     position: relative;
+    padding-right: 7em;
 }
 .range-dropdown{
     height: -webkit-fill-available;
@@ -275,10 +275,10 @@ div.css-1pahdxg-control:hover{
 .input-age .down-icon{
     transform: rotate(-90deg);
     position: absolute;
-    left: 90%;
+    left: 53%;
     font-size: larger;
     color: hsl(0,0%,80%);
-    top: -1px;
+    top: -77px;
     
 }
 
@@ -297,7 +297,7 @@ div.css-1pahdxg-control:hover{
     transform: rotate(135deg);
   }
 
-label.input-age.active{
+div.input-age.active{
     background-color: #ff4848;
     color: white;
     border:none;

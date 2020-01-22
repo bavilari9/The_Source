@@ -47,29 +47,27 @@ function AdvancedSearch({advancedQuery, countries}) {
        const setSliderVal=(e,meta)=>{
           onSliderChange(e,advancedQuery)
           setSearchActive(true)
+         
           if(e){
               console.log("setting slider", showDropDown)
-            // setTimeout(()=>{
-            //   setShowDropDown(false)
-              setRangeClass('input-age active')
-            // },3000  )
+            setTimeout(()=>{
+              setShowDropDown(false)
+             setRangeClass('input-age active')
+            },9000 )
            
           }
         }
 
         const closeDropDown=()=>{
-          console.log("clode")
+          setRangeClass('input-age active')
           setSearchActive(true)
-        
-          // to do : close on click
           setShowDropDown(false)
-
-          console.log("setting slider on close ", showDropDown)
-          // setRangeClass('input-age active')
+         
         }
 
 
         const clearQuery=()=>{
+          setShowDropDown(false)
           clearState(setRangeClass,advancedQuery)
           setSearchActive(false)
           console.log("clear query")
@@ -100,26 +98,27 @@ function AdvancedSearch({advancedQuery, countries}) {
             classNamePrefix="select-input"
             styles={customStyles}
             />
-          <label className={rangeClass} onClick={(()=>setShowDropDown(true))}>
-          <span>Age {queries.age.min !== '' ? `(${queries.age.min} - ${queries.age.max})` : `(16-99)`}</span>
+          <div className={rangeClass} >
+          <span onClick={(()=>setShowDropDown(true))}>Age {queries.age.min !== '' ? `(${queries.age.min} - ${queries.age.max})` : `(16-99)`}</span>
           <span className="down-icon"> <i className="arrow down"></i></span>
-          {showDropDown ?(
-           <div className="range-dropdown">
-             {/* <div onClick={(()=>closeDropDown())} className="close-btn">x</div> */}
-           <Range 
-             defaultValue={[queries.min,queries.max]}  
-             step={10}
-             min={0} 
-             max={100}
-             onChange={((e,meta)=>setSliderVal(e,meta))}
-             tipFormatter={value => `${value}`}
-             tipProps={{visible:true}}
-           />
-          </div>
-            ):(
+          {!showDropDown ?(
            null
+           ):(
+            <div className="range-dropdown">
+            <div onClick={((e)=>closeDropDown())} className="close-btn">x</div>
+          <Range 
+            defaultValue={[queries.min,queries.max]}  
+            step={10}
+            min={0} 
+            max={100}
+            onChange={((e,meta)=>setSliderVal(e,meta))}
+            tipFormatter={value => `${value}`}
+            tipProps={{visible:true}}
+          />
+         </div>
+           
          )}  
-          </label>
+          </div>
           <Select 
           name="country"
           options={country}
