@@ -1,5 +1,5 @@
 import React, { Component, useContext, useState} from 'react'
-import {withAuthSync } from '../utils/auth'
+import {withAuthSync} from '../utils/auth'
 import dataContext from '../components/DataContext'
 import fetch from 'isomorphic-unfetch'
 import Profile from '../components/Profile'
@@ -11,7 +11,7 @@ import AdvancedSearch from '../components/AdvancedSearch'
 import {advancedQuery} from '../api/api'
 import {queryString} from '../helpers/QueryString'
  
-function Data({}) {
+const Data = props => {
   let {data,countries,queries, setData, submitFormData,setDeleteData, setSubmitEdit, handleAdminChange} = useContext(dataContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(20);
@@ -103,4 +103,11 @@ function Data({}) {
   </div>
   )
 }
-export default withAuthSync(Data);
+
+// Data.getInitialProps = async function(ctx) {
+//   console.log("this is initial props form data", ctx)
+//   return {}
+// }
+
+
+export default Data;
