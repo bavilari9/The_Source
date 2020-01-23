@@ -17,17 +17,13 @@ const Data = props => {
   const [postPerPage, setPostPerPage] = useState(20);
 
   const submitForm =(data)=>{
-    console.log('submiting data', data)
-    let formData = new FormData()
-    formData.append('imgLink',data)
     fetch(`${process.env.MANAGEMENT}/profile`, {
       method: 'POST',
-      // headers: {
-      //   // 'Accept': 'application/json',
-      //   'Content-Type': 'multipart/form-data'
-      // },
-      // body: JSON.stringify(data),
-      body:formData
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     }).then(response=>response.json())
     .then(res=>{
       submitFormData(res)

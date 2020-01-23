@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {UploadPhoto} from '../api/api'
 import '../public/form.css'
 export default class Form extends React.Component {
   constructor() {
@@ -15,41 +16,43 @@ export default class Form extends React.Component {
         country:'',
         credit:'acting',
         imdb_link:'',
-        imgLink:{},
+        imgLink:'',
         main_profile:'false'
       }, 
-      imgLink:{}
+      uplodedFiles:false
       
     };
     this.fileInput = React.createRef();
   }
-  
   handleChange(e) {
-    console.log("file", e.target.files[0])
-  const val = e.target.files[0] 
-  console.log("value",val)
-
+    const val = e.target.value
     const name = e.target.name;
     this.setState(prev => {
       prev.inputs[name] = val;
       return prev;
     });
   }
+
+setUrlState(name ,e){
+  this.setState(prev => {
+    prev.uplodedFiles=false,
+    prev.inputs[name] = e;
+    return prev;
+  });
+}
+
   handleFile(e){
- 
    const val = e.target.files[0] 
+   this.setState({uplodedFiles:true},(()=>{
+    UploadPhoto(val, this.setUrlState.bind(this));
+   }))
+   
 
-   const name = e.target.name;
-
-   console.log("FIle",e.target.files[0], "name", name)
-   this.setState({imgLink: val},(()=>{
-    this.props.submitForm(this.state.imgLink);
-   }));
   }
   submitForm(e) {
     e.preventDefault();
     console.log("inputs", this.state.inputs)
-    this.props.submitForm(this.state.inputs);
+    !this.props.uplodedFiles? this.props.submitForm(this.state.inputs) : null
   }
 
 
