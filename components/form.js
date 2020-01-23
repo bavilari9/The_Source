@@ -170,6 +170,7 @@ setUrlState(name ,e){
                     <input 
                     name="imgLink"
                     type="file"
+                    accept='image/*'
                     onChange={this.handleFile.bind(this)} />
                   </label>
                 </div>

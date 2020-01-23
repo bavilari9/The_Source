@@ -11,7 +11,7 @@ export function  Header() {
             <h1 className="desktop-hero"><span>First-of-its-kind </span>
             database on Latino talent working in Hollywood
             </h1>
-            <h1 className="mobile-hero">We are <br/><span>Latino</span></h1>
+            <h1 className="mobile-hero"><br/><span>First-of-its-kind</span> database <br/> on Latino talent working in Hollywood</h1>
           </div>
           <div className="col-8">
             <img className="img-fluid"src={heroImg } alt="longoria latino talent"/>

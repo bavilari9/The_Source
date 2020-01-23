@@ -32,7 +32,7 @@ const Pagination = ({postPerPage, totalPosts, paginate, currentPage})=>{
 
             </ul>
             {currentPage<pageNumbers.length?(
-               <div className="paginate-back-btn jump-last-page"onClick={()=>paginate(pageNumbers.length)}><Button/><p>Last</p></div>
+               <div className="paginate-back-btn jump-last-page"onClick={()=>paginate(currentPage+1)}><Button/><p>Next</p></div>
            ):(
                 null
            ) } 
