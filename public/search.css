@@ -128,7 +128,7 @@ div.css-tlfecz-indicatorContainer{
 div.paginate-back-btn{
     text-align: center;
     display: flex;
-    color: #222f32;
+    color: #ffffff;
     position: absolute;
     flex-direction: column;
     width: max-content;
@@ -275,10 +275,10 @@ div.css-1pahdxg-control:hover{
 .input-age .down-icon{
     transform: rotate(-90deg);
     position: absolute;
-    left: 53%;
+    left: 57%;
     font-size: larger;
     color: hsl(0,0%,80%);
-    top: -77px;
+    top: -67px;
     
 }
 

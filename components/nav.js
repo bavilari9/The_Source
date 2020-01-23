@@ -4,7 +4,7 @@ import '../public/nav.css'
 import Link from '../utils/ActiveLink';
 import Navbar from '../utils/ActiveHeader';
 
-import heroLogo from '../resources/logo/The_source_V_gray.png'
+import heroLogo from '../resources/logo/The_source_H_gray.png'
 
 export function Nav() {
   return <Navbar id="hero-nav"className="navbar navbar-expand-sm bg-light justify-content-center">
