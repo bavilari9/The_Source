@@ -79,7 +79,6 @@ export const submitForm =(data,setProfileData) =>{
 }
 
 export const advancedQuery = (query, setData)=> {
-  console.log("this is the query", query)
   fetch(
     `${process.env.MANAGEMENT}/search/advanced/${JSON.stringify(query)}`,
     {
@@ -95,6 +94,20 @@ export const advancedQuery = (query, setData)=> {
       setData(res);
     });
 };
+
+
+export const UploadPhoto =(data, state)=>{
+  let formData = new FormData()
+  formData.append('imgLink',data)
+  fetch(`${process.env.MANAGEMENT}/profile/photo`, {
+    method: 'POST',
+    body:formData
+  }).then(response=>{
+    return response.json()
+  }).then(res=>{
+    state('imgLink',res)
+  })
+}
 
 export const getCode = (code) => {
   return fetch(`${process.env.MANAGEMENT}/codes/?code=${code}`, {
@@ -122,3 +135,4 @@ export const checkCode = () => {
   // }).then(console.log)
   }).then(res => res.json());
 };
+

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {UploadPhoto} from '../api/api'
 import '../public/form.css'
 export default class Form extends React.Component {
   constructor() {
@@ -17,23 +18,41 @@ export default class Form extends React.Component {
         imdb_link:'',
         imgLink:'',
         main_profile:'false'
-      }
+      }, 
+      uplodedFiles:false
       
     };
     this.fileInput = React.createRef();
   }
-  
   handleChange(e) {
-    const val = e.target.value || e.target.files[0];
+    const val = e.target.value
     const name = e.target.name;
     this.setState(prev => {
       prev.inputs[name] = val;
       return prev;
     });
   }
+
+setUrlState(name ,e){
+  this.setState(prev => {
+    prev.uplodedFiles=false,
+    prev.inputs[name] = e;
+    return prev;
+  });
+}
+
+  handleFile(e){
+   const val = e.target.files[0] 
+   this.setState({uplodedFiles:true},(()=>{
+    UploadPhoto(val, this.setUrlState.bind(this));
+   }))
+   
+
+  }
   submitForm(e) {
     e.preventDefault();
-    this.props.submitForm(this.state.inputs);
+    console.log("inputs", this.state.inputs)
+    !this.props.uplodedFiles? this.props.submitForm(this.state.inputs) : null
   }
 
 
@@ -44,7 +63,7 @@ export default class Form extends React.Component {
       <div className="page-wrapper">
             <div className="form-content">
             <div className="form">
-            <form onSubmit={this.submitForm.bind(this)}>
+            <form onSubmit={this.submitForm.bind(this)} encType="multipart/form-data" >
                 <div className="form-group form-input">
                   <label>
                     Name:
@@ -141,19 +160,17 @@ export default class Form extends React.Component {
                       type="text"
                       value={imdb_link}
                       name="imdb_link"
-                      onChange={this.handleChange.bind(this)}
-                    />
+                    onChange={this.handleChange.bind(this)}
+                  />
                    </label>
                 </div>
                 <div className="form-group form-input">
                   <label>
                     Image:
                     <input 
-                    type="file" 
-                    name="imageUrl" 
-                    accept="image/*"
-                    ref={this.fileInput}
-                    />
+                    name="imgLink"
+                    type="file"
+                    onChange={this.handleFile.bind(this)} />
                   </label>
                 </div>
                 <div className="form-group form-input">

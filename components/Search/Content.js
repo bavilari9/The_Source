@@ -13,7 +13,7 @@ import Sort from '../../resources/icons/sort.svg'
 export function Content({ postPerPage, totalPosts,paginate, currentPage,indexOfFirstPage, indexOfTheLastPost}) {
   let  {data, queries, sortSetter} = useContext(dataContext);
   const [test, setTest] = useState(undefined);
-
+  
     data = !data ? [] : data;
     data = data.slice(indexOfFirstPage, indexOfTheLastPost) 
     const handleChange = e => {
