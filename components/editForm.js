@@ -15,14 +15,14 @@ export default class Form extends React.Component {
         season:'',
         country:'',
         role:'',
-        imdb_link:''
+        imdb_link:'',
+        imgLink:''
       }
     };
   }
   handleChange(e) {
     const val = e.target.value;
     const name = e.target.name;
-    console.log(name);
     this.setState(prev => {
       prev.inputs[name] = val;
       return prev;

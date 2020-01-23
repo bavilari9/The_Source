@@ -12,18 +12,18 @@
     z-index: 100;
     opacity: 0.8;
 }
-label.input-age{
+div.input-age{
     width: 15rem;
     height: 40px;
     top: .35em;
     position: relative;
-    text-align: inherit;
 }
 
 .input-age span{
     left: 6%;
     top: 4px;
     position: relative;
+    padding-right: 6em;
 }
 .range-dropdown{
     height: -webkit-fill-available;
@@ -120,11 +120,15 @@ div.css-tlfecz-indicatorContainer{
 .pagination-nav{
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+.pagination-nav ul{
+    width: 80%;
 }
 div.paginate-back-btn{
     text-align: center;
     display: flex;
-    color: #222f32;
+    color: #ffffff;
     position: absolute;
     flex-direction: column;
     width: max-content;
@@ -140,6 +144,9 @@ div.paginate-back-btn{
     filter: invert(1);
 }
 
+.jump-back{
+    left: 10%;
+}
 .jump-last-page{
     margin-top: -2em;
     right: 8rem;
@@ -268,10 +275,10 @@ div.css-1pahdxg-control:hover{
 .input-age .down-icon{
     transform: rotate(-90deg);
     position: absolute;
-    left: 90%;
+    left: 57%;
     font-size: larger;
     color: hsl(0,0%,80%);
-    top: -1px;
+    top: -67px;
     
 }
 
@@ -290,7 +297,7 @@ div.css-1pahdxg-control:hover{
     transform: rotate(135deg);
   }
 
-label.input-age.active{
+div.input-age.active{
     background-color: #ff4848;
     color: white;
     border:none;

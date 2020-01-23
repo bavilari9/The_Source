@@ -1,5 +1,5 @@
 import React from "react";
-
+import heroLogo from '../resources/logo/The_source_H_gray.png'
 
 export function  Footer() {
   return (
@@ -12,7 +12,7 @@ export function  Footer() {
         </ul>
        </div>
        <div className="logo">
-          <a>Latino<span className="talent-logo"> Talent</span><br/> <span className="db-logo">Database</span></a>
+          <a><img src={heroLogo} alt="The Source Logo"/></a>
            <p> ©2020 All rights reserved.</p>
          </div>
        <div className="social"></div>

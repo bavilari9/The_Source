@@ -43,9 +43,10 @@ nav  h1{
         letter-spacing: normal;
         color: #ff4848;
         left: 50%;
-        margin-left: -190px;
+        margin-left: -200px;
 }
   nav ul{
+    
       flex-direction: row;
       display: flex;
       justify-content: space-evenly;
@@ -86,6 +87,15 @@ nav  h1{
       text-align: center;
       color: #eef0f2;
   }
+  nav img{
+    width: 200px;
+  }
+  footer img{
+    width: 280px;
+  }
+  /* nav a img{
+    width: 140px;
+  } */
   .navbar-nav{
       flex-direction: row;
   }
