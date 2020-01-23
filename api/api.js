@@ -111,7 +111,7 @@ export const UploadPhoto =(data, state)=>{
 }
 
 export const getCode = (code) => {
-  return fetch(`http://localhost:3000/api/codes/?code=${code}`, {
+  return fetch(`${process.env.MANAGEMENT}/codes/?code=${code}`, {
     // mode: 'no-cors',
     method: "GET",
     credentials: 'include',
@@ -124,8 +124,8 @@ export const getCode = (code) => {
 };
 
 export const checkCode = () => {
-  return RequestBuilder.makeCall(`http://localhost:3000/api/codes/checkCode`, {
-  // return fetch(`${process.env.MANAGEMENT}/codes/checkCode`, {
+  // return RequestBuilder.makeCall(`http://localhost:3000/api/codes/checkCode`, {
+  return fetch(`${process.env.MANAGEMENT}/codes/checkCode`, {
     // mode: 'no-cors',
     method: "GET",
     credentials: 'include',

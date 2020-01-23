@@ -3,7 +3,7 @@
 	  // auth is to see  restric what only a subscribed user can see 
 const User = require( '../models/User'), 
 	  router = require('express').Router(),
-	  Auth = require('../../services/auth');
+	  Auth = require('../services/auth');
 
 router.get('/validate',Auth.restrict, ( req, res)=>{
 	console.log("token ", req)

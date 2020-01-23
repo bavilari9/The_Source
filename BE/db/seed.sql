@@ -4,7 +4,7 @@
 -- DROP TYPE IF EXISTS season_type;
 -- DROP TYPE IF EXISTS role_type;
 -- DROP TYPE IF EXISTS profile_type;
-DROP TABLE IF EXISTS code CASCADE;
+-- DROP TABLE IF EXISTS code CASCADE;
 
 -- CREATE TABLE users(
 -- id BIGSERIAL PRIMARY KEY,
@@ -32,6 +32,7 @@ DROP TABLE IF EXISTS code CASCADE;
 -- country VARCHAR NOT NULL,  
 -- credit role_type, 
 -- imdb_link VARCHAR(255),
+-- imgLink VARCHAR(255),
 -- main_profile profile_type
 -- );
 
@@ -45,7 +46,7 @@ DROP TABLE IF EXISTS code CASCADE;
 -- INSERT INTO codes (code_name, code)
 -- VALUES('EARLY-ACCESS', '1234'),('EARLY-ACCESS', 'GQR456');
 
--- ACTORS WITH DOB
+-- -- ACTORS WITH DOB
 -- INSERT INTO profile (name,production,network,season,imdb_link,country,dob,gender, main_profile,credit)
 -- VALUES ('Jhon Jairo Velásquez','FINDING ESCOBAR''S MILLIONS','Discovery','fall','https://www.imdb.com/name/nm3998557/','Columbia','1962/04/15','male','false','acting'),
 -- ('Pablo Escobar','FINDING ESCOBAR''S MILLIONS','Discovery','fall','https://www.imdb.com/name/nm1389257/','Columbia','1949/12/01','male','false','acting'),
@@ -440,10 +441,10 @@ DROP TABLE IF EXISTS code CASCADE;
 -- ('Frank Gallegos','For All Mankind','Apple+','fall','https://www.imdb.com/name/nm0302740/?ref_=pro_nm_visitcons','United States','1970/08/03','male','false','acting'),
 -- ('Margarita Reyes','For All Mankind','Apple+','fall','https://www.imdb.com/name/nm1437257/?ref_=pro_nm_visitcons','United States','1977/03/15','female','false','acting'),
 -- ('Olivia Trujillo','For All Mankind','Apple+','fall','https://www.imdb.com/name/nm5648231/?ref_=pro_nm_visitcons','United States','2020/01/01','female','false','acting'),
--- ('Ian Gomez','The Morning Show','Apple+','fall','imdb.com/name/nm0327020','United States','1964/12/27','male','false','acting')
+-- ('Ian Gomez','The Morning Show','Apple+','fall','imdb.com/name/nm0327020','United States','1964/12/27','male','false','acting');
 
 
--- ACTORS WITHOUT DOB
+-- -- ACTORS WITHOUT DOB
 -- INSERT INTO profile (name,production,network,season,imdb_link,country,gender, main_profile,credit)
 -- VALUES('Carlos Luna','SEIS MANOS','Netflix','fall','https://www.imdb.com/name/nm4616177/','','male','false','acting'),
 -- ('Alex Quijano','High School Musical: The Musical: The Series','Disney+','fall','https://www.imdb.com/name/nm1752212/','','male','false','acting'),
@@ -581,9 +582,9 @@ DROP TABLE IF EXISTS code CASCADE;
 -- ('Germain Arroyo','For All Mankind','Apple+','fall','https://www.imdb.com/name/nm7838650/?ref_=pro_nm_visitcons','','male','false','acting'),
 -- ('Laura Patalano','For All Mankind','Apple+','fall','https://www.imdb.com/name/nm2755651/?ref_=pro_nm_visitcons','','female','false','acting'),
 -- ('Gabriela Quezada Bloomgarden','Too Old to Die Young','Amazon Prime Video','summer','https://www.imdb.com/name,nm8513222/?ref_=pro_nm_visitcons','','female','false','acting'),
--- ('Anthony Salvador Lewis','Alternatino with Arturo Castro','Comedy Central','summer','https://www.imdb.com/name,nm8534706/?ref_=pro_nm_visitcons','','male','false','acting')
+-- ('Anthony Salvador Lewis','Alternatino with Arturo Castro','Comedy Central','summer','https://www.imdb.com/name,nm8534706/?ref_=pro_nm_visitcons','','male','false','acting');
 
--- DIRECTORS WITHOUT DOB
+-- -- DIRECTORS WITHOUT DOB
 
 -- INSERT INTO profile (name,production,network,season,imdb_link,country,credit,main_profile,gender)
 -- VALUES('Kimberly McCullough ','High School Musical: The Musical: The Series','Disney+','fall','https://www.imdb.com/name/nm0005205/','United States','directing','false','female'),
@@ -645,9 +646,9 @@ DROP TABLE IF EXISTS code CASCADE;
 -- ('Tanya Saracho','Vida','Starz','summer','https://www.imdb.com/name/nm2571374/?ref_=nv_sr_srsg_0','Mexico' ,'directing','false','female'),
 -- ('Rodrigo Blaas','3 Below: Tales of Arcadia','Netflix','summer','https://www.imdb.com/name/nm1174214/?ref_=fn_al_nm_1','Spain','directing','false','male'),
 -- ('Francisco Ruiz-Velasco','3 Below: Tales of Arcadia','Netflix','summer','https://www.imdb.com/name/nm2508936/?ref_=fn_al_nm_1','Mexico','directing','false','male'),
--- ('Octavio E. Rodriguez','The Epic Tales of Captain Underpants','Netflix','summer','https://www.imdb.com/name/nm3185614/?ref_=fn_al_nm_1','United States','directing','false','male')
+-- ('Octavio E. Rodriguez','The Epic Tales of Captain Underpants','Netflix','summer','https://www.imdb.com/name/nm3185614/?ref_=fn_al_nm_1','United States','directing','false','male');
 
--- SHOWRUNNERS WITHOU DOB 
+-- -- SHOWRUNNERS WITHOU DOB 
 
 -- INSERT INTO profile (name,production,network,season,imdb_link,country,gender,credit,main_profile)
 --  VALUES('Julio Torres','Los Espookys','HBO','summer','https://www.imdb.com/name/nm7088580/?ref_=fn_al_nm_1','El Salvador','male','showrunning','false'),
@@ -661,7 +662,7 @@ DROP TABLE IF EXISTS code CASCADE;
 -- ('Selena Gomez','LIVING UNDOCUMENTED','Netflix','fall','imdb.com/name/nm1411125','United States','male','showrunning','false'),
 -- ('Alvaro Rodriguez','SEIS MANOS','Netflix','fall','imdb.com/name/nm0736155','','male','showrunning','false'),
 -- ('Michael Aguilar','BLUFF CITY LAW','NBC','fall','imdb.com/name/nm0013583','','male','showrunning','false'),
--- ('Pedro Morelli','BROTHERHOOD','Netflix','fall','imdb.com/name/nm2222834','','male','showrunning','false')
+-- ('Pedro Morelli','BROTHERHOOD','Netflix','fall','imdb.com/name/nm2222834','','male','showrunning','false');
 
 
 -- -- WRITER WITHOUT DOB
@@ -739,4 +740,4 @@ DROP TABLE IF EXISTS code CASCADE;
 -- ('Sal Calleros','THE GOOD DOCTOR','ABC','fall','https://www.imdb.com/name/nm3251129/?ref_=fn_al_nm_1','','male','writing','false'),
 -- ('Sonia Manzano       ','SESAME STREET','HBO','fall','https://www.imdb.com/name/nm0544448/?ref_=fn_al_nm_1','United States','female','writing','false'),
 -- ('Steven Paul Martinez','Bull','CBS','fall','https://www.imdb.com/name/nm5247932/?ref_=fn_al_nm_1','','male','writing','false'),
--- ('Tara Hernandez','Young Sheldon','CBS','fall','https://www.imdb.com/name/nm3388740/?ref_=fn_al_nm_1','','female','writing','false')
+-- ('Tara Hernandez','Young Sheldon','CBS','fall','https://www.imdb.com/name/nm3388740/?ref_=fn_al_nm_1','','female','writing','false');

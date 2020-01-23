@@ -157,12 +157,12 @@ class MyApp extends App {
         // if (!forbidden) {
           // console.log("@existsCookie", existsCookie.exists)
           // if (existsCookie.exists) {
-            // const res = await fetch(`${process.env.MANAGEMENT}/profile`);
-            const res = await fetch(`http://localhost:3000/api/profile`);
+            const res = await fetch(`${process.env.MANAGEMENT}/profile`);
+            // const res = await fetch(`http://localhost:3000/api/profile`);
               data = await res.json();
               const resCounties = await fetch(
-                `http://localhost:3000/api/profile/countries`
-                // `${process.env.MANAGEMENT}/profile/countries`
+                // `http://localhost:3000/api/profile/countries`
+                `${process.env.MANAGEMENT}/profile/countries`
               );
               countries = await resCounties.json();
           // }
@@ -211,7 +211,7 @@ class MyApp extends App {
       existsCookie: true
     });
     console.log("@this.props.path", this.props.path)
-    Router.push(this.props.path).then(() => window.scrollTo(0, 0))
+    Router.push(this.props.path);//.then(() => window.scrollTo(0, 0))
   }
   render() {
     // cookie.remove("earlyAccessCode");

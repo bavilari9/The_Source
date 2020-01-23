@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs'),
-      db = require('../../db/config')
+      db = require('../db/config')
       
 const Search= {
     // get all by query

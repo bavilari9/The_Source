@@ -2,7 +2,15 @@ const express = require('express');
 const next = require('next');
 const Code = require('./BE/controllers/Codes');
 const Profile = require('./BE/controllers/Profile');
+const Email = require('./BE/controllers/Email');
+const Search = require('./BE/controllers/Search');
+const Sessions = require('./BE/controllers/sessions');
+const User = require('./BE/controllers/User');
 var cookieParser = require('cookie-parser');
+const Auth = require('./BE/services/auth')
+const logger = require('morgan');
+const mustacheExpress = require('mustache-express');
+const bodyParser = require('body-parser')
 
 // const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev: true})
@@ -11,11 +19,25 @@ const handle = app.getRequestHandler()
 app.prepare()
 .then(() => {
   const server = express();
+  server.engine('html', mustacheExpress());
+  server.set('view engine', 'html');
+  server.set('views', __dirname + '/views');
+  server.use(express.static(__dirname + '/public'));
+
+
+  server.use(bodyParser.urlencoded({extended:false}))
+  server.use(bodyParser.json());
   server.use(cookieParser());
+  server.use(Auth.authenticate);
+  server.use(logger('dev'));
 // server.get("/api/codes", (req,res) => res.json({t: 1}))
   // Let next handle the rest.
   server.use("/api/codes", Code.router);
   server.use("/api/profile", Profile);
+  server.use("/api/email", Email);
+  server.use("/api/search", Search);
+  server.use("/api/login", Sessions);
+  server.use("/api/user", User);
   server.get('*', (req, res) => {
     if (!Code.actions.checkCode(req)) {
         // console.log("No EXISTS CODE COOKIE");
