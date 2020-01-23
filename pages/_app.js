@@ -157,10 +157,12 @@ class MyApp extends App {
         // if (!forbidden) {
           // console.log("@existsCookie", existsCookie.exists)
           // if (existsCookie.exists) {
-            const res = await fetch(`${process.env.MANAGEMENT}/profile`);
+            // const res = await fetch(`${process.env.MANAGEMENT}/profile`);
+            const res = await fetch(`http://localhost:3000/api/profile`);
               data = await res.json();
               const resCounties = await fetch(
-                `${process.env.MANAGEMENT}/profile/countries`
+                `http://localhost:3000/api/profile/countries`
+                // `${process.env.MANAGEMENT}/profile/countries`
               );
               countries = await resCounties.json();
           // }

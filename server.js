@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const Code = require('./BE/controllers/Codes');
+const Profile = require('./BE/controllers/Profile');
 var cookieParser = require('cookie-parser');
 
 // const dev = process.env.NODE_ENV !== 'production'
@@ -14,10 +15,10 @@ app.prepare()
 // server.get("/api/codes", (req,res) => res.json({t: 1}))
   // Let next handle the rest.
   server.use("/api/codes", Code.router);
+  server.use("/api/profile", Profile);
   server.get('*', (req, res) => {
     if (!Code.actions.checkCode(req)) {
         // console.log("No EXISTS CODE COOKIE");
-        console.log("@@@@@", req)
         res.status(401);
         return app.render(req, res,"/");
     }
