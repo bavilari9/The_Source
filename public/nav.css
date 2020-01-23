@@ -90,8 +90,13 @@ nav  h1{
   nav img{
     width: 250px;
   }
+  footer{
+  width: 100%;
+  height: auto;
+  }
   footer img{
-    width: 280px;
+    width: 200px;
+    padding: 3rem;
   }
   /* nav a img{
     width: 140px;
@@ -129,10 +134,10 @@ li.social-btn{
 
   @media only screen and (max-width: 720px) {
     nav .main-nav, nav .white-nav{
-        height: 200px;
+        height: 161px;
         justify-content: space-evenly;
         align-items: flex-end;
-        padding-bottom: 2em;
+        padding-bottom: 1em;
     }
     nav a.logo{
         position: absolute;
@@ -154,5 +159,9 @@ li.social-btn{
     nav h1{
             font-size: 50px;
             left: 59%;
+    }
+    nav img{
+        width: 250px;
+      
     }
   }

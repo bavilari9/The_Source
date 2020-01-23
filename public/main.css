@@ -201,7 +201,7 @@ select:-webkit-autofill:focus {
 
 footer{
     width: 100%;
-    height: 244px;
+    height: auto;
     background-color: #0d1b1e;
     display: flex;
     flex-direction: row;
@@ -209,6 +209,10 @@ footer{
     padding-top: 2em;
 }
 
+footer img{
+    width: 200px;
+    padding: 3rem;
+  }
 
 .navbar-footer{
     flex-direction: column;
@@ -256,9 +260,24 @@ footer .logo p{
     }
     .navbar-footer{
         flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
-    padding-bottom: 2rem;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 2rem;
+        margin-left: -2em;
+    }
+    .parnership span{
+        display: flex;
+        flex-direction: column;
+    }
+    .parnership p{
+        font-size: 16px;
+        line-height: 1.56;
+        text-align: center;
+        color: #0d1b1e;
+        padding: 1em;
+    }
+    .contact-form .error-message{
+        padding: 0em 3em;
     }
     
 }

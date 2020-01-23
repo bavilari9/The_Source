@@ -130,6 +130,7 @@ span.search-result-wrapper{
     .landing-content h1{
         font-size: 35px;
         padding-left: 0.2em;
+
     }
     .landing-content h2{
         padding-left: 0.2em;
@@ -145,7 +146,7 @@ span.search-result-wrapper{
         flex-direction: column;
     }
     .landing-content{
-        padding-right: 0rem !important;
-        padding-left: 0rem !important;
+        padding-right: 1rem !important;
+    padding-left: 1rem !important;
     }
 }

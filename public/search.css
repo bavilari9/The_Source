@@ -208,7 +208,8 @@ div.css-1pahdxg-control:hover{
 }
 
 .advanced-search{
-    height: max-content;
+    position: relative;
+    height: 100px;
     padding: 2em 1em 1em;
     display: flex;
     flex-direction: row;
@@ -217,19 +218,28 @@ div.css-1pahdxg-control:hover{
     background-color: #eef0f2;
 
 }
-
-.reset-wrapper{
+.advanced-searh-wrapper{
+    width: 100%;
+    height: 300px;
+    margin-top: -1rem;
+    overflow-x: scroll;
     position: absolute;
-    right: 7%;
+    overflow-x: scroll;
 }
 
+
 .advanced-input-wrapper{
-    /* width: 900px; */
-    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
+.reset-wrapper{
+    position: absolute;
+    right: 7%;
+    
+}
+
 
 .select-input{
     margin: 1em;
@@ -307,13 +317,22 @@ div.input-age.active{
 .filter-btn, .reset-btn{
     width: 31px;
     height: 31px;
-    position: relative;
-    margin-top: .5em;
+    position: absolute;
+}
+
+.filter-btn{
+    margin-top: 1em;
+    margin-left: 4rem;
+}
+.reset-btn{
+    margin-top: -4.2em;
 }
 .reset-btn path:hover{
     cursor: pointer;
     fill: #ff4848;
 }
+
+
 
 div.close-btn{
     top: 27px;
@@ -360,7 +379,21 @@ div.css-n19n07-menu::-webkit-scrollbar-thumb{
         right: .5em;
     }
     .input-age span{
-        position: initial;
+        left: 0%;
+    }
+    .filter-btn{
+        z-index: 99;
+        margin-left: 1rem;
+        margin-top: .6rem;
+    
+    }
+    .reset-btn{
+        margin-left: 40rem;
+    margin-top: -4.5rem;
+    }
+    .advanced-input-wrapper{
+        margin-left: 4rem;
+        width: fit-content;
     }
 
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import heroLogo from '../resources/logo/The_source_H_gray.png'
+import heroLogo from '../resources/img/LatinoDonorCollaborative.png';
 
 export function  Footer() {
-  return (
+  return ( 
     <footer className="foooter"> 
        <div className="navigation">
         <ul className="navbar-footer">
