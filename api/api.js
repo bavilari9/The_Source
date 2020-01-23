@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-unfetch'
+import RequestBuilder from './RequestBuilder';
 
 const MANAGEMENT = process.env.MANAGEMENT;
 
@@ -97,7 +98,7 @@ export const advancedQuery = (query, setData)=> {
 };
 
 export const getCode = (code) => {
-  return fetch(`${process.env.MANAGEMENT}/codes/?code=${code}`, {
+  return fetch(`http://localhost:3000/api/codes/?code=${code}`, {
     // mode: 'no-cors',
     method: "GET",
     credentials: 'include',
@@ -110,7 +111,8 @@ export const getCode = (code) => {
 };
 
 export const checkCode = () => {
-  return fetch(`${process.env.MANAGEMENT}/codes/checkCode`, {
+  return RequestBuilder.makeCall(`http://localhost:3000/api/codes/checkCode`, {
+  // return fetch(`${process.env.MANAGEMENT}/codes/checkCode`, {
     // mode: 'no-cors',
     method: "GET",
     credentials: 'include',
@@ -120,5 +122,6 @@ export const checkCode = () => {
     },
     // body: {code}
   // }).then(console.log)
-  }).then(res => res.json());
+  })
+  // .then(res => res.json());
 };

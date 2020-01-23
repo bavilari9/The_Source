@@ -146,26 +146,34 @@ class MyApp extends App {
         singleProfile()
       }
       static async getInitialProps(params = {}) {
-        // const existsCookie = await checkCode();
+        // console.log(params)
+        const {ctx} = params || {};
+        // console.log("@@@@@@", checkCode().then(res => console.log(res.body)))
+      // const existsCookie = await checkCode();
         let data = [];
         let countries = [];
-        // console.log("@existsCookie", existsCookie.exists)
-        // if (existsCookie.exists) {
-          const res = await fetch(`${process.env.MANAGEMENT}/profile`);
-            data = await res.json();
-            const resCounties = await fetch(
-              `${process.env.MANAGEMENT}/profile/countries`
-            );
-            countries = await resCounties.json();
-        // }
-        return { data, countries}//, existsCookie: existsCookie.exists };
+        const forbidden = ctx.res && ctx.res.statusCode === 401;
+        // console.log("@@forbidden", ctx.asPath)
+        // if (!forbidden) {
+          // console.log("@existsCookie", existsCookie.exists)
+          // if (existsCookie.exists) {
+            const res = await fetch(`${process.env.MANAGEMENT}/profile`);
+              data = await res.json();
+              const resCounties = await fetch(
+                `${process.env.MANAGEMENT}/profile/countries`
+              );
+              countries = await resCounties.json();
+          // }
+          // }
+        return { data, countries, existsCookie: !forbidden, path: ctx.asPath };
       }
 
       componentDidMount () {
-        checkCode().then(existsCookie => {
-          console.log(existsCookie)
-          if (existsCookie.exists) {
-            let {data, countries}= this.props
+        // checkCode().then(existsCookie => {
+          // let existsCookie = {exists: true}
+          // console.log(existsCookie)
+          // if (existsCookie.exists) {
+            let {data, countries, existsCookie}= this.props
             data = !data ? [] : data;
             let acting =data.filter(profile=>profile.credit==='acting');
             let writing = data.filter(profile=>profile.credit=='writing' )
@@ -174,20 +182,20 @@ class MyApp extends App {
 
             this.setState({
               data,countries,
-              existsCookie: true,
+              existsCookie: existsCookie,
               loading: false,
               dataCategory: Object.assign({}, this.state.access, {
                 acting,showrunning, writing, directing
               }),
               // earlyAccessCode: this.getEarlyAccess()
             })
-          } else {
-            this.setState({
-              loading: false,
-              existsCookie: false
-            })
-          }
-        });
+          // } else {
+          //   this.setState({
+          //     loading: false,
+          //     existsCookie: false
+          //   })
+          // }
+        // });
 
       }
   getEarlyAccess() {
@@ -198,6 +206,8 @@ class MyApp extends App {
     this.setState({
       existsCookie: true
     });
+    console.log("@this.props.path", this.props.path)
+    Router.push(this.props.path).then(() => window.scrollTo(0, 0))
   }
   render() {
     // cookie.remove("earlyAccessCode");
