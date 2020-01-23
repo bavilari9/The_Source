@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "test": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
