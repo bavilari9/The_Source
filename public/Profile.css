@@ -219,6 +219,7 @@ width:100%;
 @media only screen and (max-width: 600px) {
   .profile-row{
     flex-direction: column;
+    padding-bottom: 4rem;
   }
   .profile-card{
     width: 140px;
@@ -227,10 +228,6 @@ width:100%;
   .profile-card h3{
     font-size: 30px;
   }
-  div.profile-photo .col-6{
-    max-width: 60%;
-  }
-
 .profile-photo img.img-fluid{
     width: 100%;
   }
@@ -242,9 +239,12 @@ width:100%;
     max-width: 80.666667%;
 
   }
+  div.profile-photo .col-6 {
+    max-width: 100%;
+  }
  
   .verify-section{
-    margin: 12rem 2rem;
+    display: none;
   }
   .verify-section p{
     width: auto;

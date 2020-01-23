@@ -379,7 +379,7 @@ div.css-n19n07-menu::-webkit-scrollbar-thumb{
         right: .5em;
     }
     .input-age span{
-        position: initial;
+        left: 0%;
     }
     .filter-btn{
         z-index: 99;
