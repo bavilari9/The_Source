@@ -5,10 +5,11 @@ import {Content} from '../components/landingPage/Content'
 import {Partners} from '../components/landingPage/Partners'
 import ContactFrom from '../components/Form/ContactForm'
 import SuccessContact from '../components/Form/SuccessContact'
+import {sendEmail} from '../api/api'
 import dataContext from '../components/DataContext'
 import '../public/main.css'
 
-import {sendEmail} from '../api/api'
+
 
 function Home({}){
   const sendContactEmail = (message)=>{

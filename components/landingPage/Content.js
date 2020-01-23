@@ -10,7 +10,7 @@ export function Content(props) {
     let credits = {}
 
   Object.keys(props).forEach(key =>{
-    credits[key]=props[key].filter(data=>data.main_profile ==='true').slice(0,4) 
+    credits[key]=props[key].filter(data=>data.imglink !== null && data.main_profile ==='true').slice(0,4) 
     credits[key] =  credits[key].length < 4 ? props[key].slice(0,4) : credits[key];
   })
 

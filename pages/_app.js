@@ -130,7 +130,7 @@ class MyApp extends App {
           let curretDate = new Date().getFullYear();
           let Adob = curretDate - parseInt(a.dob.split('T')[0].substring(0, 4))
           let Bdob = curretDate - parseInt(b.dob.split('T')[0].substring(0, 4))
-           return Bdob - Adob
+           return (Bdob - Adob) 
         });
         this.setState({
           data : dataSort
@@ -167,6 +167,8 @@ class MyApp extends App {
           // if (existsCookie.exists) {
             let {data, countries}= this.props
             data = !data ? [] : data;
+            // null images at last
+            data = data.sort((a,b)=>(b.imgLink != null) - (a.imgLink != null))
             let acting =data.filter(profile=>profile.credit==='acting');
             let writing = data.filter(profile=>profile.credit=='writing' )
             let directing = data.filter(profile=>profile.credit =='directing');
