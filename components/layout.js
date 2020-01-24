@@ -15,7 +15,7 @@ const Layout = (props) => {
         _path = "| " + _path;
       }
     }
-    return `IMBDLAT ${_path}`
+    return `TSDB ${_path}`
   }
   return <div>
     <Head>

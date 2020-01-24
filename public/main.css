@@ -206,14 +206,28 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
 }
 
 footer img{
-    width: 200px;
-    padding: 3rem;
-  }
-
+    padding: 0;
+}
+footer .ts-logo, footer .ldc-logo{
+    margin-top: 2em;
+    text-align: center;
+    color: #848c8e;
+}
+footer .ts-logo img {
+    width: 300px;
+}
+footer .ldc-logo {
+    position: absolute;
+    right: 4em;
+}
+footer .ldc-logo img {
+    width: 100px;
+}
 .navbar-footer{
     flex-direction: column;
     list-style: none;
@@ -280,4 +294,36 @@ footer .logo p{
         padding: 0em 3em;
     }
     
+    footer img{
+        padding: 0;
+    }
+    footer .ts-logo, footer .ldc-logo{
+        margin-top: 2em;
+        text-align: center;
+        color: #848c8e;
+    }
+    footer .ts-logo {
+        padding-bottom: 50px;
+        display: inline-block;
+        width: fit-content;
+    }
+    footer .ts-logo img {
+        width: 200px;
+        margin-left: 20px;
+        margin-top: -50px;
+    }
+    footer .ts-logo p {
+        bottom: 0;
+        width: 100%;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+    footer .ldc-logo {
+        position: absolute;
+        right: 4em;
+    }
+    footer .ldc-logo {
+        width: 75px;
+    }
 }
