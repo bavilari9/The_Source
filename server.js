@@ -13,7 +13,7 @@ const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser')
 
 // const dev = process.env.NODE_ENV !== 'production'
-const app = next({dev: true})
+const app = next({dev: false})
 const handle = app.getRequestHandler()
 
 app.prepare()
