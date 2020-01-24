@@ -21,7 +21,7 @@ app.prepare()
   const server = express();
   server.use(function(req, res) {
     console.log(req.headers.host)
-    res.redirect('https://' + req.headers.host + req.url);
+    res.redirect('https://www.thesourcedatabase.org' + req.url);
   });
   server.engine('html', mustacheExpress());
   server.set('view engine', 'html');
