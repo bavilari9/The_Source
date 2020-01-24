@@ -43,7 +43,8 @@ app.prepare()
   server.use("/api/user", User);
   server.get('*', (req, res) => {
     console.log(req.secure)
-    if(!req.secure){
+    if(req.protocol === 'http'){
+    // if(!req.secure){
       // res.redirect("https://www.thesourcedatabase.org" + req.url);
       res.redirect("https://" + req.headers.host + req.url);
       // res.end();
