@@ -42,20 +42,12 @@ app.prepare()
   server.use("/api/login", Sessions);
   server.use("/api/user", User);
   server.get('*', (req, res) => {
-    console.log(req.secure)
-    if(req.protocol === 'http'){
-    // if(!req.secure){
-      // res.redirect("https://www.thesourcedatabase.org" + req.url);
-      res.redirect("https://" + req.headers.host + req.url);
-      // res.end();
-    } else {
-      if (!Code.actions.checkCode(req)) {
-          // console.log("No EXISTS CODE COOKIE");
-          res.status(401);
-          return app.render(req, res,"/");
-      }
-      return handle(req, res);
+    if (!Code.actions.checkCode(req)) {
+        // console.log("No EXISTS CODE COOKIE");
+        res.status(401);
+        return app.render(req, res,"/");
     }
+    return handle(req, res);
   });
 
   const PORT = process.env.PORT || 3000;
