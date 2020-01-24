@@ -9,7 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next build && node server.js",
-    "test": "node server.js"
+    "test": "nodemon server.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
