@@ -42,8 +42,10 @@ app.prepare()
   server.use("/api/login", Sessions);
   server.use("/api/user", User);
   server.get('*', (req, res) => {
+    console.log(req.secure)
     if(!req.secure){
-      res.redirect("https://" + req.headers.host + req.url);
+      res.redirect("https://www.thesourcedatabase.org" + req.url);
+      // res.redirect("https://" + req.headers.host + req.url);
       res.end();
     }
     if (!Code.actions.checkCode(req)) {
