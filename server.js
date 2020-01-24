@@ -19,6 +19,9 @@ const handle = app.getRequestHandler()
 app.prepare()
 .then(() => {
   const server = express();
+  server.get("*", function(request, response){
+    response.redirect("https://" + request.headers.host + request.url);
+  });
   server.engine('html', mustacheExpress());
   server.set('view engine', 'html');
   server.set('views', __dirname + '/views');
