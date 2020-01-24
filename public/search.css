@@ -118,6 +118,7 @@ div.css-tlfecz-indicatorContainer{
 /* #############Pagination ################### */
 
 .pagination-nav{
+    height: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,23 +157,25 @@ div.paginate-back-btn{
     transform: rotate(-85deg);
 }
 
+.pagination-nav.dark .pagination-number{
+    color: #0d1b1e;
+}
 .pagination-number{
     width: 10px;
     height: 22px;
     font-family: 'Barlow', sans-serif;
     font-size: 18px;
     color: #fcfcfc;
-    
 }
 
 .pagination-number:hover{
-    color:#ff4848;
+    color:#ff4848 !important;
     cursor: pointer;
 }
 
 li.pagination-number.active{
     text-decoration:underline;
-    color: #ff4848;
+    color: #ff4848 !important;
     font-weight: bold;
 }
 .pagination-data{

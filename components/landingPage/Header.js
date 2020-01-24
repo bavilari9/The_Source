@@ -1,6 +1,6 @@
 import React from "react";
 import '../../public/header.css'
-import heroImg from '../../static/hero.png';
+import heroImg from '../../static/hero.jpeg';
 
 export function  Header() {
   return (
@@ -14,7 +14,7 @@ export function  Header() {
             <h1 className="mobile-hero"><br/><span>First-of-its-kind</span> database <br/> on Latino talent working in Hollywood</h1>
           </div>
           <div className="col-8">
-            <img className="img-fluid"src={heroImg } alt="longoria latino talent"/>
+            <img className="hero-img img-fluid"src={heroImg } alt="longoria latino talent"/>
           </div>
       </div>
   </header>

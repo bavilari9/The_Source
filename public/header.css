@@ -43,7 +43,8 @@ header .col-8{
 
 .hero-title h1{
     width: 620px;
-    height: 222px;
+    /* height: 222px; */
+    height: fit-content;
     font-family: 'Passion One', cursive;
     font-size: 53px;
     font-weight: bold;
@@ -52,7 +53,7 @@ header .col-8{
     background-color: #0d1b1e;
     opacity: 0.9;
     position: inherit;
-    left: 37%;
+    left: 40%;
     bottom: 10%;
     padding:1rem;
 }
@@ -79,7 +80,7 @@ header .col-8{
 
 .hero-content{
     margin-bottom:0;
-    padding: 10% 20%;
+    padding: 5% 20%;
 
     background-color: #fcfcfc;
 }

@@ -10,7 +10,7 @@ export function Nav() {
   return <Navbar id="hero-nav"className="navbar navbar-expand-sm bg-light justify-content-center">
     <ul className="navbar-nav">
       <Link activeClassName="nav-item" href="/search">
-                <a>Searh Talent</a>
+                <a>Search Talent</a>
       </Link>
       <Link activeClassName="nav-item" href="/about">
                 <a>About</a>
