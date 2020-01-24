@@ -53,7 +53,9 @@ function AdvancedSearch({ advancedQuery, countries }) {
     }
   };
 
-  const closeDropDown = () => {
+  const closeDropDown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setRangeClass("input-age active");
     setSearchActive(true);
     setShowDropDown(false);
@@ -95,8 +97,8 @@ function AdvancedSearch({ advancedQuery, countries }) {
             classNamePrefix="select-input"
             styles={customStyles}
           />
-          <div className={rangeClass}>
-            <span onClick={() => setShowDropDown(true)}>
+          <div className={rangeClass} onClick={() => setShowDropDown(true)}>
+            <span>
               Age{" "}
               {queries.age.min !== ""
                 ? `(${queries.age.min} - ${queries.age.max})`
@@ -108,7 +110,7 @@ function AdvancedSearch({ advancedQuery, countries }) {
             </span>
             {!showDropDown ? null : (
               <div className="range-dropdown">
-                <div onClick={e => closeDropDown()} className="close-btn">
+                <div onClick={e => closeDropDown(e)} className="close-btn">
                   x
                 </div>
                 <Range
