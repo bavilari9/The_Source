@@ -99,6 +99,7 @@ const Data = props => {
           totalPosts={data.length}
           paginate={paginate}
           currentPage={currentPage}
+          className="dark"
         />
   </div>
   )

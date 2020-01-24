@@ -10,7 +10,7 @@ import Button from '../components/Button';
 import CONSTANTS from '../utils/constants';
 
 function EarlyAccess () {
-    let HARDCODED_CODE = "1234";
+    const MAX_LENGHT = 4;
     const [invalid, setInvalid] = useState(false);
     const [code, setCode] = useState("");
     let {saveEarlyAccessToken} = useContext(dataContext);
@@ -43,7 +43,7 @@ function EarlyAccess () {
                 <div className="body">
                     <p className="lbl-code">Introduce your early access code here</p>
                     {/* {invalid ? <p>Invalid Code</p> : null} */}
-                    <input className="input-code" style={invalid ? {color: "#ff4848", borderColor: "#ff4848"} : null} onChange={onChange} id='txt-code' text={code}/>
+                    <input maxlength={MAX_LENGHT} className="input-code" style={invalid ? {color: "#ff4848", borderColor: "#ff4848"} : null} onChange={onChange} id='txt-code' text={code}/>
                     {/* <button className="btn-submit" sendCode={sendCode}>Enter</button> */}
                     <div className="invalid">
                         {invalid ? 

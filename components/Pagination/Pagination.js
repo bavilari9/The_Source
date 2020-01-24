@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../../resources/icons/down_arrow.svg'
-const Pagination = ({postPerPage, totalPosts, paginate, currentPage})=>{
+const Pagination = ({postPerPage, totalPosts, paginate, currentPage, className})=>{
     let lastIndex = currentPage+4;
     let firstIndex = lastIndex-5
     const pageNumbers =[]
@@ -17,7 +17,7 @@ const Pagination = ({postPerPage, totalPosts, paginate, currentPage})=>{
     }
 
     return <div>
-        <nav className="pagination-nav">
+        <nav className={`pagination-nav ${className || ''}`}>
            {currentPage>1?(
                <div class="paginate-back-btn jump-back"onClick={()=>paginate(currentPage-1)}><Button/><p>Previous</p></div>
            ):(

@@ -12,9 +12,13 @@
     height: 100%;
     background-color: #0d1b1e;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .early-access-container {
         width: 90% !important;
+    }
+
+    .input-code {
+        font-size: 3em;
     }
 }
 .early-access-container {
@@ -87,6 +91,7 @@
   }
 
   button {
+      border: none;
       display: block;
       margin: auto !important;
   }
