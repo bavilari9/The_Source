@@ -44,7 +44,7 @@ app.prepare()
   server.get('*', (req, res) => {
     if(!req.secure){
       res.redirect("https://" + req.headers.host + req.url);
-      res.end
+      // res.end();
     }
     if (!Code.actions.checkCode(req)) {
         // console.log("No EXISTS CODE COOKIE");
