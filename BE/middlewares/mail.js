@@ -14,7 +14,7 @@ function sendStaffContactEmail (req, res,next) {
     const data = {
         from: `${email}`,
         to: `${DESTINATARY}`,
-        subject: 'Contact',
+        subject: 'The Source Database Confirmation',
         text: `${message}`
     };
     mg.messages().send(data, function (error, body) {
@@ -34,7 +34,7 @@ function sendStaffContactEmail (req, res,next) {
     const data = {
         from:`Mailgun Sandbox ${SANDBOX_URL}`, 
         to: email,
-        subject: "IMDB Profile Verification",
+        subject: "The Source Database Profile Verification",
         template: "verify",
         "h:X-Mailgun-Variables": `{"name": "${name}","name": "${talentName}","phoneNumber": "${phoneNumber}","socialMediaLink": "${socialMediaLink}", "bio": "${bio}"}`
     };
@@ -59,7 +59,7 @@ function sendStaffContactEmail (req, res,next) {
     const data = {
         from:`Mailgun Sandbox ${SANDBOX_URL}`,
         to:email,
-        subject: "IMDB LAT Welcome",
+        subject: "The Source Database Welcome",
         template: "contact",
         "h:X-Mailgun-Variables": `{"name": "${name}"}`
     };
