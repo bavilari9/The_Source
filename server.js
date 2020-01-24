@@ -42,9 +42,9 @@ app.prepare()
   server.use("/api/login", Sessions);
   server.use("/api/user", User);
   server.get('*', (req, res) => {
-    if(!request.secure){
-      response.redirect("https://" + request.headers.host + request.url);
-      response.end();
+    if(!req.secure){
+      res.redirect("https://" + req.headers.host + req.url);
+      res.end
     }
     if (!Code.actions.checkCode(req)) {
         // console.log("No EXISTS CODE COOKIE");
