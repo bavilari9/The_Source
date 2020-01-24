@@ -19,10 +19,9 @@ const handle = app.getRequestHandler()
 app.prepare()
 .then(() => {
   const server = express();
-  server.use(function(req, res) {
-    console.log(req.headers.host)
-    res.redirect('https://www.thesourcedatabase.org' + req.url);
-  });
+  // server.use(function(req, res) {
+  //   res.redirect('https://' + req.headers.host + req.url);
+  // });
   server.engine('html', mustacheExpress());
   server.set('view engine', 'html');
   server.set('views', __dirname + '/views');
@@ -43,6 +42,7 @@ app.prepare()
   server.use("/api/login", Sessions);
   server.use("/api/user", User);
   server.get('*', (req, res) => {
+    res.redirect('https://' + req.headers.host + req.url);
     if (!Code.actions.checkCode(req)) {
         // console.log("No EXISTS CODE COOKIE");
         res.status(401);
