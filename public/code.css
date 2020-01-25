@@ -127,7 +127,7 @@
     font-weight: bold;
     color: #ff4848;
 }
-.download-report .download-link {
+.download-report .download-link,
 .contact-us .email-link {
     cursor: pointer;
 }
