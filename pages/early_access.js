@@ -68,10 +68,10 @@ function EarlyAccess () {
                             </p>
                         </div>
 
-                        <div class="download-here">
+                        <div class="download-report">
                             <p class="message">
                                 Want to acces the Latino GDP report 2019?
-                                <span onClick={downloadReport} class="email-link">Download here</span>
+                                <span onClick={downloadReport} class="download-link">Download here</span>
                             </p>
                         </div>
 
