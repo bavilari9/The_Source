@@ -33,7 +33,7 @@ function sendStaffContactEmail (req, res,next) {
     console.log("verification email", name)
     const data = {
         from:`The Source Database ${SANDBOX_URL}`, 
-        to: email,
+        to: `${DESTINATARY}`,
         subject: "The Source Database Profile Verification",
         template: "verify",
         "h:X-Mailgun-Variables": `{"name": "${name}","name": "${talentName}","phoneNumber": "${phoneNumber}","socialMediaLink": "${socialMediaLink}", "bio": "${bio}"}`
