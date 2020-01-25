@@ -15,7 +15,7 @@ const Layout = (props) => {
         _path = "| " + _path;
       }
     }
-    return `TSDB ${_path}`
+    return `TheSourceDB ${_path}`
   }
   return <div>
     <Head>
@@ -23,7 +23,10 @@ const Layout = (props) => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link href="https://fonts.googleapis.com/css?family=Passion+One:400,700|Unna:400,700|Barlow|Passion+One&display=swap" rel="stylesheet"/>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
-
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155872189-2"></script>
+        <script>
+          {"window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'UA-155872189-2');"}
+        </script>
 
 
     </Head>

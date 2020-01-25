@@ -64,7 +64,8 @@ export default function Post() {
       <div className=" profile-container container">
         {render(data)}
         <div className="verify-section">
-          <p>If this is your profile please contact us to autorize your data usage with us.</p>
+          {/* <p>If this is your profile please contact us to autorize your data usage with us.</p> */}
+          <p>Talent, please contact us to claim and build your profile.</p>
           <a href="/contact">Verify this profile</a>
         </div>
         <div id="profile-id-wrapper" className='landing-content'>
