@@ -16,7 +16,7 @@ export default function Post() {
   let  {data } = useContext(dataContext);
   const router = useRouter();
   const profileCategory = data.filter(profile=> profile.id === router.query.id)[0]
-
+  console.log(data)
   const style=(gender)=>{
     return gender=='female'? femaleBackground :maleBackground;
   }
@@ -30,7 +30,7 @@ export default function Post() {
       let dob = new Date().getFullYear() - parseInt(profile.dob.split('T')[0].substring(0, 4));
       return(<div className="profile-row row" >
             <div className="profile-photo col-6 ">
-            <img className="img-fluid" src={style(profile.gender)} alt="profile-img"/>
+            <img className="img-fluid" src={profile.imglink || style(profile.gender)} alt="profile-img"/>
             </div>
             <div className="profile-content col-5">
             <h1>{ profile.name.replace(/^\w/, c => c.toUpperCase())}</h1>
