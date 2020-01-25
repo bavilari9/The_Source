@@ -32,7 +32,7 @@ function sendStaffContactEmail (req, res,next) {
     let {talentName, name, email, phoneNumber, bio, socialMediaLink} = req.body
     console.log("verification email", name)
     const data = {
-        from:`Mailgun Sandbox ${SANDBOX_URL}`, 
+        from:`The Source Database ${SANDBOX_URL}`, 
         to: email,
         subject: "The Source Database Profile Verification",
         template: "verify",
@@ -57,7 +57,7 @@ function sendStaffContactEmail (req, res,next) {
       console.log('this is after sent ',req.body)
     let {name, email} = req.body
     const data = {
-        from:`Mailgun Sandbox ${SANDBOX_URL}`,
+        from:`The Source Database ${SANDBOX_URL}`,
         to:email,
         subject: "The Source Database Welcome",
         template: "contact",
