@@ -12,6 +12,15 @@
     height: 100%;
     background-color: #0d1b1e;
 }
+
+.message-options {
+    width: 854px;
+    margin-left: -50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 @media screen and (max-width: 800px) {
     .early-access-container {
         width: 90% !important;
@@ -19,6 +28,10 @@
 
     .input-code {
         font-size: 3em;
+    }
+    .message-options{
+        margin-left: 0;
+        display: block;
     }
 }
 .early-access-container {
@@ -103,15 +116,18 @@
     text-align: center;
     
 }
+.download-report .message,
 .contact-us .message {
     color: #848c8e;
 }
+.download-report .download-link ,
 .contact-us .email-link {
     display: block;
     text-decoration: underline;
     font-weight: bold;
     color: #ff4848;
 }
+.download-report .download-link {
 .contact-us .email-link {
     cursor: pointer;
 }

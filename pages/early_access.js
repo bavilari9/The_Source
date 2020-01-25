@@ -31,6 +31,12 @@ function EarlyAccess () {
             }
         }).catch(() => console.error);
     }
+    const downloadReport = () => {
+        if(process.env.GDP_REPORT_URL){
+            window.open(`${process.env.GDP_REPORT_URL}`,'_blank')
+        }
+    }
+
     const sendEmail = () => {
         window.open(`mailto:${CONSTANTS.ADMIN_EMAIL}`);
     };
@@ -54,12 +60,23 @@ function EarlyAccess () {
                         : null}
                     </div>
                     <Button title="Enter" action={sendCode} />
-                    <div className="contact-us">
-                        <p className="message">
-                            Want access or be included on the database?
-                            <span onClick={sendEmail} className="email-link">Contact us here</span>
-                        </p>
+                    <div class="message-options">
+                        <div className="contact-us">
+                            <p className="message">
+                                Want access or be included on the database?
+                                <span onClick={sendEmail} className="email-link">Contact us here</span>
+                            </p>
+                        </div>
+
+                        <div class="download-here">
+                            <p class="message">
+                                Want to acces the Latino GDP report 2019?
+                                <span onClick={downloadReport} class="email-link">Download here</span>
+                            </p>
+                        </div>
+
                     </div>
+
                     <div className="footer">
                         ©2020 All rights reserved.
                     </div>
