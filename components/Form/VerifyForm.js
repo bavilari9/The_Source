@@ -24,7 +24,7 @@ export default class VerifyForm extends React.Component {
   }
   submitForm(e) {
     e.preventDefault();
-    this.props.submitForm(this.state.inputs);
+    this.props.submitForm && this.props.submitForm(this.state.inputs);
   }
   render() {
     const { email,message,talentName,phoneNumber,socialMediaLink,bio,name} = this.state.inputs;
