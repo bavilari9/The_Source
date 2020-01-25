@@ -1,7 +1,9 @@
 import React from "react";
 import heroLogo from '../resources/img/LatinoDonorCollaborative.png';
+import tsLogo from '../resources/logo/The_source_H_gray.png'
 
 export function  Footer() {
+  const LDC_URL = "http://latinodonorcollaborative.org/";
   return ( 
     <footer className="foooter"> 
        <div className="navigation">
@@ -11,10 +13,16 @@ export function  Footer() {
         <li className="nav-item "><a href={"/#contact"}>Contact</a></li>
         </ul>
        </div>
-       <div className="logo">
-          <a><img src={heroLogo} alt="The Source Logo"/></a>
-           <p> ©2020 All rights reserved.</p>
+       {/* <div className="logos"> */}
+         <div className="ts-logo">
+          <a href={"/"}><img src={tsLogo} alt="The Source Logo"/></a>
+          <p> ©2020 All rights reserved.</p>
          </div>
+          <div className="ldc-logo">
+            <a href={LDC_URL} target="_blank"><img src={heroLogo} alt="The Source Logo"/></a>
+          </div>
+           
+        {/* </div> */}
        <div className="social"></div>
     </footer>
   )

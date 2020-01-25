@@ -5,8 +5,16 @@ import Link from '../utils/ActiveLink';
 import Navbar from '../utils/ActiveHeader';
 
 import heroLogo from '../resources/logo/The_source_H_gray.png'
+import Facebook from '../resources/icons/facebook.svg'
+import Twitter from '../resources/icons/twitter.svg'
+import Instagram from '../resources/icons/instagram.svg'
 
 export function Nav() {
+  const URLS = {
+    TWITTER: "https://twitter.com/thesourcedb",
+    FACEBOOK: "https://www.facebook.com/thesourcedb.thesourcedb.3",
+    INSTAGRAM: "https://www.instagram.com/thesourcedb/"
+  };
   return <Navbar id="hero-nav"className="navbar navbar-expand-sm bg-light justify-content-center">
     <ul className="navbar-nav">
       <Link activeClassName="nav-item" href="/search">
@@ -20,8 +28,15 @@ export function Nav() {
                 <a>Contact</a>
       </Link>
       <span className="social-icons">
-      <li className="nav-item social-btn "><a href={"/"} ></a></li>
-      <li className="nav-item social-btn"><a href={"/" } ></a></li>
+        <li className="nav-item social-btn ">
+          <a href={URLS.FACEBOOK} target="_blank"><Facebook /></a>
+        </li>
+        <li className="nav-item social-btn">
+          <a href={URLS.TWITTER} target="_blank"><Twitter /></a>
+        </li>
+        <li className="nav-item social-btn">
+          <a href={ URLS.INSTAGRAM} target="_blank"><Instagram /></a>
+        </li>
       </span>
       </ul>
 

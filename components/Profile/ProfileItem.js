@@ -19,7 +19,7 @@ const style=(gender,imglink )=>{
       return nonBinaryBackground
     }
   }
-  return  imglink !== null ? imglink : genderCheck();
+  return  imglink || genderCheck();
 
 }
 

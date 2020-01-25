@@ -53,7 +53,7 @@ header .col-8{
     background-color: #0d1b1e;
     opacity: 0.9;
     position: inherit;
-    left: 40%;
+    left: 20%;
     bottom: 10%;
     padding:1rem;
 }
@@ -67,6 +67,7 @@ header .col-8{
 }
 .hero-title span{
     color: #ff4848;
+    display: contents;
 }
 
 .hero-img{
@@ -155,7 +156,12 @@ header .col-8{
         height: 366px;
     }
     header .col-8 img{
-        width: auto;
+        width: auto !important;
+        max-width: max-content !important;
+        height: 100%;
+        position: absolute;
+        left: -70%;
+        /* width: auto; */
         mix-blend-mode: unset;
         background-color: #d8d8d8;
         opacity: 0.8;

@@ -237,7 +237,7 @@ class MyApp extends App {
           <Loader/>
         : this.state.existsCookie ?
             <div className="imbd-container">
-              <Layout>
+              <Layout path={this.props.path}>
                 <Component {...pageProps} />
               </Layout>
               <Footer/>

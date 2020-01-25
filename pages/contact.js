@@ -25,10 +25,10 @@ function Contact({}) {
     }
     return (
       <div>
-        <Layout>
+        {/* <Layout> */}
           <Nav/>
           {submitingForm()}
-        </Layout>
+        {/* </Layout> */}
       </div>
     )
 

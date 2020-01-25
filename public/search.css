@@ -20,10 +20,10 @@ div.input-age{
 }
 
 .input-age span{
-    left: 6%;
+    /* left: 6%; */
     top: 4px;
     position: relative;
-    padding-right: 6em;
+    margin-left: 10px;
 }
 .range-dropdown{
     height: -webkit-fill-available;
@@ -41,6 +41,7 @@ div.rc-slider{
     width: 12rem !important;
     height: -webkit-fill-available;
     margin-top: 1.5em;
+    margin-left: 10px;
 }
 div.rc-slider-tooltip-inner{
 width: 20px;
@@ -280,7 +281,7 @@ div.css-1pahdxg-control:hover{
     font-family: 'Barlow', sans-serif;
     color: #0d1b1e;
     border: solid 2px #0d1b1e;
-    text-align: center;
+    /* text-align: center; */
     line-height: 1.56;
     font-size: 18px;
 }
@@ -288,10 +289,11 @@ div.css-1pahdxg-control:hover{
 .input-age .down-icon{
     transform: rotate(-90deg);
     position: absolute;
-    left: 57%;
+    /* left: 57%; */
+    right: 15px;
     font-size: larger;
     color: hsl(0,0%,80%);
-    top: -67px;
+    top: 0;
     
 }
 
