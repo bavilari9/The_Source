@@ -1,5 +1,7 @@
 import React, { Component,useState } from 'react'
-import Contact from '../components/Form/ContactForm'
+import ContactFrom from '../components/Form/ContactForm'
+import SuccessContact from '../components/Form/SuccessContact'
+import {sendEmail} from '../api/api'
 import {Partners} from '../components/landingPage/Partners'
 import { Nav } from "../components/nav"
 
