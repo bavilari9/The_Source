@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 import Contact from '../components/Form/ContactForm'
 import {Partners} from '../components/landingPage/Partners'
 import { Nav } from "../components/nav"
