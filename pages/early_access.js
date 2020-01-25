@@ -70,7 +70,7 @@ function EarlyAccess () {
 
                         <div class="download-report">
                             <p class="message">
-                                Want to acces the Latino GDP report 2019?
+                                Download the LDC’s Above-the-Line Latinos in Media Report
                                 <span onClick={downloadReport} class="download-link">Download here</span>
                             </p>
                         </div>
