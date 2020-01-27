@@ -12,7 +12,7 @@ import Instagram from '../resources/icons/instagram.svg'
 export function Nav() {
   const URLS = {
     TWITTER: "https://twitter.com/thesourcedb",
-    FACEBOOK: "https://www.facebook.com/thesourcedb.thesourcedb.3",
+    FACEBOOK: "https://www.facebook.com/thesourcedatabase",
     INSTAGRAM: "https://www.instagram.com/thesourcedb/"
   };
   return <Navbar id="hero-nav"className="navbar navbar-expand-sm bg-light justify-content-center">
