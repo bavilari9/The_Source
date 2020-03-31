@@ -21,7 +21,7 @@
     "js-cookie": "^2.2.1",
     "jwt-decode": "^2.2.0",
     "mdbreact": "^4.23.1",
-    "next": "9.1.6",
+    "next": "9.3.2",
     "next-compose-plugins": "^2.2.0",
     "next-cookies": "^2.0.3",
     "next-fonts": "^0.19.0",
